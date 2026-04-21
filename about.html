@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ben Dobkin — About</title>
+  <meta name="description" content="About Ben Dobkin — Product Designer & Engineer." />
+  <link rel="stylesheet" href="style.css" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="index.html" class="site-nav__brand">
+      <span class="site-nav__brand-name">Ben Dobkin</span>
+      <span class="site-nav__brand-role">Product Designer &amp; Engineer</span>
+    </a>
+    <div class="site-nav__links">
+      <a href="index.html" class="site-nav__link" data-page="case-studies">Case studies</a>
+      <a href="other-work.html" class="site-nav__link" data-page="other-work">Other work</a>
+      <a href="playground.html" class="site-nav__link" data-page="playground">Playground</a>
+      <a href="about.html" class="site-nav__link active" data-page="about">About</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="about">
+      <div class="about__photo" aria-hidden="true"></div>
+
+      <div class="about__body">
+        <div>
+          <h1 class="about__heading">About</h1>
+          <!-- TODO: replace placeholder bio with final copy -->
+          <p class="about__bio">I'm a Product Designer and Engineer based in the US. I lead design for complex, end-to-end product experiences — from financial tooling and CRMs to interactive retail installations and launch campaigns. My practice sits at the intersection of strategic thinking and pixel-perfect execution.</p>
+        </div>
+
+        <div>
+          <p class="about__section-label">Experience</p>
+          <ul class="about__list">
+            <li>HubSpot <span>— Product Designer (current)</span></li>
+            <li>Toyota <span>— Product Designer</span></li>
+            <li>Deeplocal <span>— Designer</span></li>
+            <li>Apple <span>— Designer</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="about__section-label">Tools</p>
+          <ul class="about__list">
+            <li>Figma, Framer, Principle</li>
+            <li>HTML, CSS, JavaScript</li>
+            <li>After Effects, Cinema 4D</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="about__section-label">Contact</p>
+          <div class="about__contact">
+            <!-- TODO: replace placeholder LinkedIn URL -->
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <!-- TODO: drop resume PDF at assets/resume.pdf -->
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+            <a href="mailto:bensdobkin@gmail.com">bensdobkin@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Ben Dobkin</span>
+    <div class="site-footer__right">
+      <a href="mailto:bensdobkin@gmail.com">bensdobkin@gmail.com</a>
+      <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

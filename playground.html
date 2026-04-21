@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ben Dobkin — Playground</title>
+  <meta name="description" content="A visual playground of explorations, sketches, and side projects." />
+  <link rel="stylesheet" href="style.css" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="index.html" class="site-nav__brand">
+      <span class="site-nav__brand-name">Ben Dobkin</span>
+      <span class="site-nav__brand-role">Product Designer &amp; Engineer</span>
+    </a>
+    <div class="site-nav__links">
+      <a href="index.html" class="site-nav__link" data-page="case-studies">Case studies</a>
+      <a href="other-work.html" class="site-nav__link" data-page="other-work">Other work</a>
+      <a href="playground.html" class="site-nav__link active" data-page="playground">Playground</a>
+      <a href="about.html" class="site-nav__link" data-page="about">About</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="playground" id="playground" aria-label="Visual playground">
+      <div class="playground__col playground__col--a">
+        <button type="button" class="playground__item" data-index="0" data-src="assets/images/img-p1.jpg" aria-label="Open image 1"></button>
+        <button type="button" class="playground__item" data-index="1" data-src="assets/images/img-p2.jpg" aria-label="Open image 2"></button>
+        <button type="button" class="playground__item" data-index="2" data-src="assets/images/img-p3.jpg" aria-label="Open image 3"></button>
+      </div>
+      <div class="playground__col playground__col--b">
+        <button type="button" class="playground__item" data-index="3" data-src="assets/images/img-p4.jpg" aria-label="Open image 4"></button>
+        <button type="button" class="playground__item" data-index="4" data-src="assets/images/img-p5.jpg" aria-label="Open image 5"></button>
+        <button type="button" class="playground__item" data-index="5" data-src="assets/images/img-p6.jpg" aria-label="Open image 6"></button>
+        <button type="button" class="playground__item" data-index="6" data-src="assets/images/img-p7.jpg" aria-label="Open image 7"></button>
+      </div>
+      <div class="playground__col playground__col--a">
+        <button type="button" class="playground__item" data-index="7" data-src="assets/images/img-p8.jpg" aria-label="Open image 8"></button>
+        <button type="button" class="playground__item" data-index="8" data-src="assets/images/img-p9.jpg" aria-label="Open image 9"></button>
+        <button type="button" class="playground__item" data-index="9" data-src="assets/images/img-p10.jpg" aria-label="Open image 10"></button>
+      </div>
+      <div class="playground__col playground__col--b">
+        <button type="button" class="playground__item" data-index="10" data-src="assets/images/img-p11.jpg" aria-label="Open image 11"></button>
+        <button type="button" class="playground__item" data-index="11" data-src="assets/images/img-p12.jpg" aria-label="Open image 12"></button>
+        <button type="button" class="playground__item" data-index="12" data-src="assets/images/img-p13.jpg" aria-label="Open image 13"></button>
+        <button type="button" class="playground__item" data-index="13" data-src="assets/images/img-p14.jpg" aria-label="Open image 14"></button>
+      </div>
+      <div class="playground__col playground__col--a">
+        <button type="button" class="playground__item" data-index="14" data-src="assets/images/img-p15.jpg" aria-label="Open image 15"></button>
+        <button type="button" class="playground__item" data-index="15" data-src="assets/images/img-p16.jpg" aria-label="Open image 16"></button>
+        <button type="button" class="playground__item" data-index="16" data-src="assets/images/img-p17.jpg" aria-label="Open image 17"></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Ben Dobkin</span>
+    <div class="site-footer__right">
+      <a href="mailto:bensdobkin@gmail.com">bensdobkin@gmail.com</a>
+      <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

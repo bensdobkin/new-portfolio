@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project title — Case study</title>
+  <meta name="description" content="Case study by Ben Dobkin." />
+  <link rel="stylesheet" href="../style.css" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__brand">
+      <span class="site-nav__brand-name">Ben Dobkin</span>
+      <span class="site-nav__brand-role">Product Designer &amp; Engineer</span>
+    </a>
+    <div class="site-nav__links">
+      <a href="../index.html" class="site-nav__link active" data-page="case-studies">Case studies</a>
+      <a href="../other-work.html" class="site-nav__link" data-page="other-work">Other work</a>
+      <a href="../playground.html" class="site-nav__link" data-page="playground">Playground</a>
+      <a href="../about.html" class="site-nav__link" data-page="about">About</a>
+    </div>
+  </nav>
+
+  <main class="case-study">
+    <aside class="case-study__rail" aria-label="Section navigation">
+      <div class="case-study__rail-inner">
+        <a class="case-study__rail-item is-active" href="#overview">Overview</a>
+        <a class="case-study__rail-item" href="#context">Context</a>
+        <a class="case-study__rail-item" href="#problem">Problem</a>
+        <a class="case-study__rail-item" href="#solution">Solution</a>
+        <a class="case-study__rail-item" href="#outcome">Outcome</a>
+      </div>
+    </aside>
+
+    <article class="case-study__main">
+      <div class="case-study__hero" id="overview" aria-hidden="true"></div>
+
+      <header class="case-study__section">
+        <div class="case-study__title-row">
+          <h1 class="case-study__title">Project title</h1>
+          <p class="case-study__title-side">Location</p>
+        </div>
+        <p class="case-study__intro">A one- or two-sentence summary of the project: what you designed, who it was for, and the headline outcome or metric that captures its impact.</p>
+      </header>
+
+      <div class="case-study__overview">
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Role</p>
+          <p class="case-study__overview-value">Product Designer</p>
+        </div>
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Client</p>
+          <p class="case-study__overview-value">Client name</p>
+        </div>
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Team</p>
+          <p class="case-study__overview-value">
+            Product Manager<br />
+            Engineering Leads<br />
+            Head of Design
+          </p>
+        </div>
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Shipped</p>
+          <p class="case-study__overview-value">Month Year</p>
+        </div>
+      </div>
+
+      <section class="case-study__section" id="context">
+        <h2 class="case-study__h2">Context</h2>
+        <p class="case-study__p">Set the stage: what was the broader situation or commitment behind this work? Through discovery, identify the 2–3 shortcomings or opportunities in the existing experience.</p>
+      </section>
+
+      <div class="case-study__numbered">
+        <div class="case-study__numbered-cell">
+          <p class="case-study__numbered-num">1</p>
+          <div class="case-study__numbered-body">
+            <p class="case-study__numbered-title">Shortcoming one</p>
+            <p class="case-study__numbered-desc">A single sentence describing the first shortcoming or gap in the existing experience.</p>
+          </div>
+        </div>
+        <div class="case-study__numbered-cell">
+          <p class="case-study__numbered-num">2</p>
+          <div class="case-study__numbered-body">
+            <p class="case-study__numbered-title">Shortcoming two</p>
+            <p class="case-study__numbered-desc">A single sentence describing the second shortcoming or gap.</p>
+          </div>
+        </div>
+        <div class="case-study__numbered-cell">
+          <p class="case-study__numbered-num">3</p>
+          <div class="case-study__numbered-body">
+            <p class="case-study__numbered-title">Shortcoming three</p>
+            <p class="case-study__numbered-desc">A single sentence describing the third shortcoming or gap.</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="case-study__section" id="problem">
+        <h2 class="case-study__h2">Problem</h2>
+        <p class="case-study__p">Frame the problem more precisely. Empathize with the user and walk through how they might go about finding or completing key tasks today — surfacing pain points and underlying needs along the way.</p>
+      </section>
+
+      <div class="case-study__compare">
+        <div class="case-study__compare-col">
+          <div class="case-study__compare-header">Pain points</div>
+          <div class="case-study__compare-cell">Pain point one — a specific friction the user encounters today.</div>
+          <div class="case-study__compare-cell">Pain point two — another concrete friction or gap.</div>
+          <div class="case-study__compare-cell">Pain point three — a third friction from discovery.</div>
+          <div class="case-study__compare-cell">Pain point four — a fourth friction from discovery.</div>
+        </div>
+        <div class="case-study__compare-col">
+          <div class="case-study__compare-header">Needs</div>
+          <div class="case-study__compare-cell">Need one — the underlying user need the pain point points to.</div>
+          <div class="case-study__compare-cell">Need two — a second underlying need.</div>
+          <div class="case-study__compare-cell">Need three — a third underlying need.</div>
+          <div class="case-study__compare-cell">Need four — a fourth underlying need.</div>
+        </div>
+      </div>
+
+      <section class="case-study__section" id="solution">
+        <h2 class="case-study__h2">Solution</h2>
+        <p class="case-study__p">Describe the approach you took and the design decisions that followed. Explain how the solution maps back to the needs surfaced in the problem section.</p>
+      </section>
+
+      <div class="case-study__hero" aria-hidden="true"></div>
+
+      <section class="case-study__section">
+        <p class="case-study__p">Optional supporting paragraph: describe a specific flow, pattern, or detail worth calling out. Keep to 2–3 sentences and pair with an image.</p>
+      </section>
+
+      <section class="case-study__section" id="outcome">
+        <h2 class="case-study__h2">Outcome</h2>
+        <p class="case-study__p">Close with results: the measurable impact (traffic, conversion, adoption, qualitative wins) and what shipped. A single sharp metric usually carries more weight than a list.</p>
+      </section>
+
+      <nav class="case-study__prevnext" aria-label="Project navigation">
+        <a href="project-template.html">← Previous project</a>
+        <a href="project-template.html">Next project →</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Ben Dobkin</span>
+    <div class="site-footer__right">
+      <a href="mailto:bensdobkin@gmail.com">bensdobkin@gmail.com</a>
+      <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
