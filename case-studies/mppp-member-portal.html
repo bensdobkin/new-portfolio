@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Portal for MPPP — Case study</title>
+  <meta name="description" content="Ben Dobkin designed the member-facing portal for the Medicare Prescription Payment Plan — a white-labeled product available to roughly 20M Medicare Part D enrollees across Humana, Cigna, and other sponsor partners since October 2024." />
+  <link rel="stylesheet" href="../style.css" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__brand">
+      <span class="site-nav__brand-name">Ben Dobkin</span>
+      <span class="site-nav__brand-role">Product Designer &amp; Engineer</span>
+    </a>
+    <div class="site-nav__links">
+      <a href="../index.html" class="site-nav__link active" data-page="case-studies">Case studies</a>
+      <a href="../other-work.html" class="site-nav__link" data-page="other-work">Other work</a>
+      <a href="../playground.html" class="site-nav__link" data-page="playground">Playground</a>
+      <a href="../about.html" class="site-nav__link" data-page="about">About</a>
+    </div>
+  </nav>
+
+  <main class="case-study">
+    <aside class="case-study__rail" aria-label="Section navigation">
+      <div class="case-study__rail-inner">
+        <a class="case-study__rail-item is-active" href="#overview">Overview</a>
+        <a class="case-study__rail-item" href="#problem">Problem</a>
+        <a class="case-study__rail-item" href="#insight">Insight</a>
+        <a class="case-study__rail-item" href="#process">Process</a>
+        <a class="case-study__rail-item" href="#decision">Decision</a>
+        <a class="case-study__rail-item" href="#solution">Solution</a>
+        <a class="case-study__rail-item" href="#result">Result</a>
+      </div>
+    </aside>
+
+    <article class="case-study__main">
+      <div class="case-study__hero" id="overview" aria-hidden="true">
+        <!-- TODO: assets/images/mppp-member-portal-hero.png — shipped member portal home page stripped to the single question a member came to answer: what do I owe and how do I pay it -->
+      </div>
+
+      <header class="case-study__section">
+        <div class="case-study__title-row">
+          <h1 class="case-study__title">Member Portal for the Medicare Prescription Payment Plan</h1>
+          <p class="case-study__title-side">2024</p>
+        </div>
+        <p class="case-study__intro">I designed the member-facing portal for the Medicare Prescription Payment Plan — the everyday surface for roughly 20 million Medicare enrollees across Humana, Cigna, and other Part D sponsors since October 2024.</p>
+      </header>
+
+      <div class="case-study__overview">
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Role</p>
+          <p class="case-study__overview-value">Founding Designer</p>
+        </div>
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Agency</p>
+          <p class="case-study__overview-value">Paytient</p>
+        </div>
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Client</p>
+          <p class="case-study__overview-value">
+            Humana<br />
+            Cigna<br />
+            Other Part D sponsors
+          </p>
+        </div>
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Shipped</p>
+          <p class="case-study__overview-value">October 2024</p>
+        </div>
+      </div>
+
+      <section class="case-study__section">
+        <h2 class="case-study__h2">Summary</h2>
+        <p class="case-study__p">I designed the member-facing portal for the Medicare Prescription Payment Plan — a white-labeled product available to roughly 20 million Medicare Part D enrollees across Humana, Cigna, and other sponsor partners since October 2024. The portal covers the member's full relationship with the program: the home page, payments, claims, account management, payment method setup, autopay, and the caregiver enrollment path. In user testing with seniors aged 65 and up, every participant completed every task, and participants consistently described the experience as easier to use than the Medicare enrollment they had already been through.</p>
+      </section>
+
+      <section class="case-study__section" id="problem">
+        <h2 class="case-study__h2">Problem</h2>
+        <p class="case-study__p">The Medicare Prescription Payment Plan is a federal program that lets seniors on Part D spread their out-of-pocket prescription costs across the calendar year instead of paying in full at the pharmacy. It is a benefit, not a loan. There is no interest, there are no fees, and the only thing the program actually does is change <em>when</em> members pay, not <em>what</em> they pay.</p>
+        <p class="case-study__p">The Medicare population did not read it that way. In research, participants who qualified for the program and would have clearly benefited from it expressed hesitation about enrolling. One participant summarized the perception directly:</p>
+      </section>
+
+      <figure class="case-study__quote">
+        <div class="case-study__quote-inner">
+          <blockquote class="case-study__quote-text">"This is aimed at people who are really desperate."</blockquote>
+          <figcaption class="case-study__quote-attr">— P05, research participant</figcaption>
+        </div>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">The stigma was not just a marketing problem — it was a product problem. If the portal felt like a bill-pay dashboard for a debt someone was struggling to manage, the stigma would hold. If it felt like utility management, the stigma had a chance of loosening. The member's steady-state experience with the program — every time they logged in to check a balance or make a payment — was either going to reinforce the "last-resort tool" framing or replace it with something closer to "level pay for my prescriptions."</p>
+        <p class="case-study__p">The other pressure on the design was the population's general experience with healthcare interfaces. Multiple participants described Medicare enrollment as overwhelming and confusing, with new terminology to learn and decisions to make under time pressure. Whatever the portal was, it needed to feel easier than that. A member who had just been through Medicare enrollment should log in and exhale.</p>
+      </section>
+
+      <section class="case-study__section" id="insight">
+        <h2 class="case-study__h2">Insight</h2>
+        <p class="case-study__p">The insight was that the portal should not try to be a financial dashboard at all. Financial dashboards are designed to give users agency over complexity — spending graphs, category breakdowns, trends, projections. Seniors on MPPP did not want agency over complexity. They wanted the complexity to go away.</p>
+        <p class="case-study__p">The Medicare population is budget-conscious across income levels. Half of research participants spontaneously compared the program to the level-pay utility plans they already used. That comparison is the right one. A utility level-pay customer does not need a dashboard — they need to know what this month's bill is and when it is due. Everything else is information the provider holds so the customer does not have to.</p>
+        <p class="case-study__p">Designed from that framing, the portal's job was to compress the member's relationship with the program into one answerable question per visit: <strong>what do I owe and how do I pay it</strong>. Claims, spending history, year-to-date tracking, and other information were still available — but they were not the front door. The front door was the question.</p>
+      </section>
+
+      <section class="case-study__section" id="process">
+        <h2 class="case-study__h2">Process</h2>
+      </section>
+
+      <p class="case-study__subhead">Research with the target population</p>
+
+      <section class="case-study__section">
+        <p class="case-study__p">Paytient ran 47 interviews with Medicare beneficiaries and caregivers, with 11 participants aged 65 and up in moderated testing sessions across Missouri and other locations. The research surfaced the stigma insight explicitly, but it also produced a handful of findings that shaped nearly every decision in the portal.</p>
+        <p class="case-study__p">The Medicare population is touchscreen-first. Most remote participants joined on tablets, and in-person participants tried to interact with desktop screens by touch. Mobile and tablet layouts had to treat tapping as the primary interaction, with tap targets sized accordingly.</p>
+        <p class="case-study__p">Members were confused by the terminology of financial products. Participants asked "what does year to date mean" and "what does remaining mean" when looking at a spend tracker. Every piece of copy had to be reviewable against whether it added information or just added friction.</p>
+        <p class="case-study__p">Most members preferred to pay by card rather than by ACH — both for fraud protection and for the rewards. The payments experience had to treat cards as first-class without making bank account linking feel second-class. And members wanted printable confirmations: nearly half mentioned printing screens after completing tasks, so download-to-PDF and printable statement paths had to be available throughout.</p>
+      </section>
+
+      <p class="case-study__subhead">Directions explored</p>
+
+      <section class="case-study__section">
+        <p class="case-study__p">I iterated through several directions for the home page, from dense to minimal.</p>
+      </section>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-member-portal-directions.png — three directions explored for the home page; the shipped version is the rightmost, after testing showed participants consistently gravitated toward the lightest-weight option -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Exploration</span>Three directions explored for the home page. The shipped version is the rightmost — after testing showed participants consistently gravitated toward the lightest-weight option.</figcaption>
+      </figure>
+
+      <div class="case-study__table-wrap">
+        <table class="case-study__table">
+          <thead>
+            <tr>
+              <th scope="col">Direction</th>
+              <th scope="col">What it did</th>
+              <th scope="col">Why it fell short</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Full financial dashboard</td>
+              <td>Home page led with a spend tracker, an out-of-pocket maximum progress bar, a year-to-date summary, and an activity feed of recent claims and payments.</td>
+              <td>Participants read it as a bill or a credit statement — reinforcing the stigma the portal was trying to defuse. The year-to-date and "remaining" terminology also confused participants.</td>
+            </tr>
+            <tr>
+              <td>Condensed summary view</td>
+              <td>Home page showed a smaller spend summary card alongside the current payment due and payment methods.</td>
+              <td>Less overwhelming, but still framed the experience around the member's debt rather than the action they came to take. Participants spent time reading the summary rather than going to the action they needed.</td>
+            </tr>
+            <tr>
+              <td>Minimal action-first</td>
+              <td>Home page showed only the minimum payment due, the due date, the pay button, and access to payment methods — with all other information moved to dedicated tabs.</td>
+              <td>This is the direction that shipped.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <section class="case-study__section">
+        <p class="case-study__p">In testing, participants gravitated toward the lightest-weight option consistently. The minimal home page let members answer their question and move on. The dashboard directions — even the condensed one — held members in place reading information they had not come to read.</p>
+      </section>
+
+      <section class="case-study__section" id="decision">
+        <h2 class="case-study__h2">Decision</h2>
+        <p class="case-study__p">The minimal home page won because it matched what the research population actually wanted to do with the portal, which was as little as possible. The full dashboard expressed everything the product knew — but expressing everything is not a design virtue for a population already overwhelmed by Medicare and suspicious of the program's stigma. Moving spend tracking, claims detail, and out-of-pocket progress into dedicated tabs meant the information was still available to any member who wanted it, without being the first thing every member had to process on every login.</p>
+        <p class="case-study__p">The trade-off is real: members who want a complete picture of their year have to navigate to get it. But the testing was clear that the members we were designing for preferred that trade-off by a wide margin.</p>
+      </section>
+
+      <section class="case-study__section" id="solution">
+        <h2 class="case-study__h2">Solution</h2>
+        <p class="case-study__p">The shipped member portal is organized around a simple principle: the home page answers the question, and the other tabs hold the information a member might want if they have a different question.</p>
+      </section>
+
+      <p class="case-study__subhead">The home page</p>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-member-portal-home.png — home page: minimum payment due, due date, Pay button, See statement button, payment methods section with autopay and add-new entries. Nothing else. -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Home</span>The home page shows the minimum payment due, the due date, a Pay button, and a See statement button — with payment methods and an Enroll in Autopay link below. Nothing else.</figcaption>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">The home page shows the minimum payment due, the due date, and two buttons: Pay and See statement. Below that, the payment methods section with entries for autopay enrollment and adding a new payment method. The welcome header personalizes the page with the member's first name. That is the whole home page.</p>
+        <p class="case-study__p">There is no spend graph, no activity feed, no year-to-date summary on the default home page. When members are past due, the same layout shifts into a red-coded state with a banner and a Pay past due button — designed to be unmissable without being punitive. The past-due experience is detailed in the <a href="mppp-past-due.html">past-due and recovery case study</a>.</p>
+      </section>
+
+      <p class="case-study__subhead">The make-a-payment flow</p>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-member-portal-make-payment.png — payment amount selection (Minimum, Current balance, Other); payment method selection with saved methods and add-new; single Preview payment CTA -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Payments</span>Payment amount selection offers Minimum payment due, Current balance, or Other amount. Payment method selection shows saved methods with a clean add-new option. A single Preview payment CTA moves the member forward.</figcaption>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">Making a payment is a three-part flow: choose amount, choose method, preview and confirm. The copy on Current balance explicitly says "this is the full amount you're paying back," so members understand the option rather than wondering whether it means something different from the minimum. The Other amount field lets members pay exactly what they want to pay — which turned out to matter for members who were paying on a schedule that did not match the minimum due.</p>
+      </section>
+
+      <p class="case-study__subhead">Claims and the Inflation Reduction Act</p>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-member-portal-claims.png — Claims page: prescriptions grouped by month with pharmacy, date, cost; educational card at top explaining the $2,000 out-of-pocket cap -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Claims</span>The Claims page shows prescriptions grouped by month with pharmacy, date, and cost. An educational card at the top explains the $2,000 out-of-pocket cap introduced by the Inflation Reduction Act.</figcaption>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">The Claims page is the second-most-visited part of the portal, and it is where the relationship between MPPP and the broader Medicare benefit structure had to be made clear. The educational card at the top explains that starting in 2025, the Inflation Reduction Act caps out-of-pocket drug costs at $2,000 per year, and that once the member hits that cap, eligible prescriptions cost zero for the rest of the year. This context matters because members seeing their prescription costs listed might otherwise assume those costs will continue accumulating indefinitely.</p>
+      </section>
+
+      <p class="case-study__subhead">The payments tab</p>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-member-portal-payments-tab.png — Payments tab: payment schedule, full payment history with color-coded statuses (green successful, red failed, black neutral/refund), link to projected schedule -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Payments tab</span>The Payments tab consolidates the payment schedule, full payment history with color-coded statuses (green for successful, red for failed, black for neutral states like refunds), and a link to the projected payment schedule.</figcaption>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">Payments is where members who want the full picture go. Color coding does a lot of work here — green for successful one-time and autopay payments, red for failed payments that need attention, and neutral black for refunds and processing states. For a population with potentially declining vision and unfamiliar terminology, color-coded status at a glance was worth the simplification trade-off.</p>
+      </section>
+
+      <p class="case-study__subhead">Account and the caregiver path</p>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-member-portal-account.png — Account page: member name, opt-in status, access to other plans, payment method management, opt-out entry point -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Account</span>The Account page shows the member's name and opt-in status, with access to view other plans, manage payment methods, and opt out of the program if needed.</figcaption>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">The Account page is built to do one thing clearly: confirm to the member that they are opted in and give them the controls that matter — adding a payment method, viewing other plans they may be enrolled in, and opting out if they choose to.</p>
+        <p class="case-study__p">The caregiver enrollment path is a specific consideration inside the opt-in flow. Because the Medicare population often relies on family members, adult children, or other caregivers to manage their accounts, the opt-in flow captures whether the person signing up is the member themselves or a caregiver acting on the member's behalf — along with the caregiver's relationship to the member. Caregivers have their own login path and their own documented presence in the account, which matters for later support interactions when the caregiver, not the member, calls in for help.</p>
+      </section>
+
+      <p class="case-study__subhead">Designed for the population</p>
+
+      <div class="case-study__table-wrap">
+        <table class="case-study__table">
+          <thead>
+            <tr>
+              <th scope="col">Consideration</th>
+              <th scope="col">How it shows up</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Touchscreen-first</td>
+              <td>Large tap targets, generous spacing, no hover-dependent interactions.</td>
+            </tr>
+            <tr>
+              <td>Plain language over terminology</td>
+              <td>"Your out-of-pocket costs" instead of "Year to date spend"; "Minimum payment due" instead of "Amount required."</td>
+            </tr>
+            <tr>
+              <td>Printable confirmations</td>
+              <td>Download-to-PDF paths on the payment schedule and statement views.</td>
+            </tr>
+            <tr>
+              <td>Card-first payments</td>
+              <td>Cards and bank accounts are both supported — with card as the most visible default.</td>
+            </tr>
+            <tr>
+              <td>White-label flexibility</td>
+              <td>Each sponsor's brand renders as the primary identity — Humana feels like Humana and the next partner feels like theirs, without Paytient infrastructure showing through.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <section class="case-study__section" id="result">
+        <h2 class="case-study__h2">Result</h2>
+        <p class="case-study__p">The Medicare Prescription Payment Plan launched in October 2024 and is now available to roughly 20 million Medicare enrollees through Humana, Cigna, and other sponsor partners — about one third of the Medicare population.</p>
+        <p class="case-study__p">In user testing across 47 interviews, every participant successfully completed every task in the portal, and participants consistently described the flows as straightforward and easy to follow. One participant summarized the contrast directly:</p>
+      </section>
+
+      <figure class="case-study__quote">
+        <div class="case-study__quote-inner">
+          <blockquote class="case-study__quote-text">"Easier than dealing with Medicare enrollment!"</blockquote>
+          <figcaption class="case-study__quote-attr">— P06, research participant</figcaption>
+        </div>
+      </figure>
+
+      <div class="case-study__stats">
+        <div class="case-study__stat">
+          <p class="case-study__stat-num">~20M</p>
+          <p class="case-study__stat-desc">Medicare enrollees reached through Humana, Cigna, and other Part D sponsor partners — about one third of the Medicare population.</p>
+        </div>
+        <div class="case-study__stat">
+          <p class="case-study__stat-num">47/47</p>
+          <p class="case-study__stat-desc">Research participants who completed every task in the portal — the same population that described Medicare enrollment itself as overwhelming.</p>
+        </div>
+      </div>
+
+      <section class="case-study__section">
+        <p class="case-study__p">For a population that had just described Medicare enrollment itself as overwhelming, that comparison is the real result. The portal did not need to be impressive — it needed to feel easier than the thing that had just exhausted them. What the research showed is that the design choices that made it feel that way were, for the most part, choices to hold back: to not build the richer dashboard, to not surface the full information on first visit, to let the home page answer one question and leave the rest for later. That restraint was the design.</p>
+      </section>
+
+      <nav class="case-study__prevnext" aria-label="Project navigation">
+        <a href="mppp-past-due.html">← Past-Due and Recovery</a>
+        <a href="mppp-calculator.html">Monthly Payment Calculator →</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Ben Dobkin</span>
+    <div class="site-footer__right">
+      <a href="mailto:bensdobkin@gmail.com">bensdobkin@gmail.com</a>
+      <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Past-Due and Recovery for MPPP — Case study</title>
+  <meta name="description" content="Ben Dobkin designed the end-to-end past-due and recovery experience for the Medicare Prescription Payment Plan — spanning the member portal and the advocate-facing internal tool, lifting payment method adoption by ~7% without late fees, interest, or credit reporting." />
+  <link rel="stylesheet" href="../style.css" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__brand">
+      <span class="site-nav__brand-name">Ben Dobkin</span>
+      <span class="site-nav__brand-role">Product Designer &amp; Engineer</span>
+    </a>
+    <div class="site-nav__links">
+      <a href="../index.html" class="site-nav__link active" data-page="case-studies">Case studies</a>
+      <a href="../other-work.html" class="site-nav__link" data-page="other-work">Other work</a>
+      <a href="../playground.html" class="site-nav__link" data-page="playground">Playground</a>
+      <a href="../about.html" class="site-nav__link" data-page="about">About</a>
+    </div>
+  </nav>
+
+  <main class="case-study">
+    <aside class="case-study__rail" aria-label="Section navigation">
+      <div class="case-study__rail-inner">
+        <a class="case-study__rail-item is-active" href="#overview">Overview</a>
+        <a class="case-study__rail-item" href="#problem">Problem</a>
+        <a class="case-study__rail-item" href="#insight">Insight</a>
+        <a class="case-study__rail-item" href="#process">Process</a>
+        <a class="case-study__rail-item" href="#decision">Decision</a>
+        <a class="case-study__rail-item" href="#solution">Solution</a>
+        <a class="case-study__rail-item" href="#result">Result</a>
+      </div>
+    </aside>
+
+    <article class="case-study__main">
+      <div class="case-study__hero" id="overview" aria-hidden="true">
+        <!-- TODO: assets/images/mppp-past-due-hero.png — member-side past-due home (red banner, red pay button, red minimum payment) paired with the same past-due status surfacing on the advocate side -->
+      </div>
+
+      <header class="case-study__section">
+        <div class="case-study__title-row">
+          <h1 class="case-study__title">Past-Due and Recovery for the Medicare Prescription Payment Plan</h1>
+          <p class="case-study__title-side">2024–2025</p>
+        </div>
+        <p class="case-study__intro">I designed the end-to-end past-due and recovery experience for a no-interest federal program — spanning the member portal and the advocate-facing internal tool, and lifting payment method adoption by ~7% without late fees, interest, or credit reporting.</p>
+      </header>
+
+      <div class="case-study__overview">
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Role</p>
+          <p class="case-study__overview-value">Founding Designer</p>
+        </div>
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Agency</p>
+          <p class="case-study__overview-value">Paytient</p>
+        </div>
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Client</p>
+          <p class="case-study__overview-value">
+            Humana<br />
+            Express Scripts<br />
+            Other Part D sponsors
+          </p>
+        </div>
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Shipped</p>
+          <p class="case-study__overview-value">2024–2025</p>
+        </div>
+      </div>
+
+      <section class="case-study__section">
+        <h2 class="case-study__h2">Summary</h2>
+        <p class="case-study__p">I designed the end-to-end past-due and recovery experience for a no-interest federal program, covering both the member-facing portal and the advocate-facing internal tool. The work was in service of contractually committed delinquency targets of 5% for Humana and 15% for Express Scripts, and had to achieve those targets without the usual financial levers: no late fees, no interest, no credit reporting. The shipped system drove a roughly 7% improvement in payment method adoption across active members and a measurable lift in advocate completion of the post-opt-in setup flow.</p>
+      </section>
+
+      <section class="case-study__section" id="problem">
+        <h2 class="case-study__h2">Problem</h2>
+        <p class="case-study__p">The Medicare Prescription Payment Plan is a no-interest program. Members who fall behind cannot be charged late fees, cannot accrue interest, and cannot be reported to credit bureaus. The program is designed to help, not to punish. But the commercial reality is that Paytient signed contractual delinquency targets with its sponsors: 5% for Humana and 15% for Express Scripts, measured as the dollar volume of open past-due balances.</p>
+        <p class="case-study__p">The scale of the problem was visible in the data early. Of roughly 41,000 active members — members who had picked up at least one prescription under the program — only about 11,000 had a payment method on file, and only around 10,000 were enrolled in autopay. Initial projections had 60% of payment volume coming through checks, which are asynchronous, delay-prone, and correlate with delinquency. Humana's advocate behavior told a more specific story: after opting a member into the program, 95% of Humana advocates went straight back to the generic search page without clicking through to payments. Express Scripts advocates completed the payment setup 36% of the time.</p>
+        <p class="case-study__p">The problem was not that members did not want to pay. The problem was that the program had no built-in mechanism to enforce payment, opt-in alone was being treated as the end of the workflow by the people helping members enroll, and the product needed to close both gaps at once without resorting to coercive design.</p>
+      </section>
+
+      <div class="case-study__numbered">
+        <div class="case-study__numbered-cell">
+          <p class="case-study__numbered-num">1</p>
+          <div class="case-study__numbered-body">
+            <p class="case-study__numbered-title">No financial levers</p>
+            <p class="case-study__numbered-desc">A federal no-interest program means no late fees, no interest, no credit reporting — and still, contractual delinquency targets of 5% (Humana) and 15% (Express Scripts) to hit.</p>
+          </div>
+        </div>
+        <div class="case-study__numbered-cell">
+          <p class="case-study__numbered-num">2</p>
+          <div class="case-study__numbered-body">
+            <p class="case-study__numbered-title">Low payment method adoption</p>
+            <p class="case-study__numbered-desc">Of ~41K active members, only ~11K had a payment method on file and ~10K were on autopay. 60% of projected payment volume was coming through checks.</p>
+          </div>
+        </div>
+        <div class="case-study__numbered-cell">
+          <p class="case-study__numbered-num">3</p>
+          <div class="case-study__numbered-body">
+            <p class="case-study__numbered-title">Advocate drop-off after opt-in</p>
+            <p class="case-study__numbered-desc">95% of Humana advocates returned to the generic search page after opting a member in, never reaching payment setup. Express Scripts completed the setup 36% of the time.</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="case-study__section" id="insight">
+        <h2 class="case-study__h2">Insight</h2>
+        <p class="case-study__p">The insight came out of reframing what recovery actually is in this product. A traditional billing product uses late fees and interest to motivate repayment. MPPP could not. That left three levers: what the member sees, what the advocate can do, and what the product itself can translate between them.</p>
+        <p class="case-study__p">Recovery in MPPP had to happen across two audiences working together. The member needed to see the consequences of their situation clearly enough to act without feeling punished. The advocate needed the right information at the right moment to help, without having to remote-control the member's screen to do it. And the product itself had to do a surprising amount of the work — turning machine-level signals like Stripe decline codes into human-level guidance the advocate could actually use on the phone.</p>
+        <p class="case-study__p">This shifted the design problem. The goal was not to push members harder. The goal was to make the path to repayment visible, accurate, and supported on both sides of the call.</p>
+      </section>
+
+      <section class="case-study__section" id="process">
+        <h2 class="case-study__h2">Process</h2>
+      </section>
+
+      <p class="case-study__subhead">Understanding the two-audience shape</p>
+
+      <section class="case-study__section">
+        <p class="case-study__p">The data separated the problem into two distinct design tracks. On the member side, the question was how to communicate a past-due state that felt honest rather than punitive, and how to give members a clear path to action at every stage — missed payment, failed payment, partial payment, opt-out with outstanding balance. On the advocate side, the question was what information advocates needed to actually help, and how to deliver it without making them toggle into the member's portal to see anything.</p>
+        <p class="case-study__p">The second question was more interesting because it pointed to a larger product decision. The original model had been for advocates to impersonate the member's portal when a member called in for help. That had been technically simpler but operationally weak: advocates had incomplete tools, the workflow was awkward on calls, and the compliance posture was not ideal. Feedback from advocates repeatedly asked for a standalone experience with everything the member sees plus more. That advocate-side work became its own full product, the advocate portal, which is covered in a separate case study. For this case study, the relevant piece is that past-due handling on the advocate side is native to that tool rather than an overlay on the member's screen.</p>
+      </section>
+
+      <p class="case-study__subhead">Designing for decline codes</p>
+
+      <section class="case-study__section">
+        <p class="case-study__p">The single most consequential piece of detail work was in failed payments. When a payment fails, the payment processor returns a machine-readable decline code. Raw codes like <code>authentication_required</code>, <code>card_velocity_exceeded</code>, <code>expired_card</code>, and <code>processing_error</code> are technically accurate but useless to an advocate on a call with a 72-year-old member.</p>
+        <p class="case-study__p">I mapped each of approximately 30 Stripe decline codes to three things: a high-level next step the advocate should take (prompt for another payment method, retry after a minute, prompt for accurate details, or escalate to the card issuer), plain-language support guidance, and where helpful, a scripted sentence the advocate could read directly to the member. The raw code is never surfaced — the advocate sees the action and the script, nothing more.</p>
+      </section>
+
+      <div class="case-study__table-wrap">
+        <table class="case-study__table">
+          <thead>
+            <tr>
+              <th scope="col">Raw code from processor</th>
+              <th scope="col">What the advocate sees</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>expired_card</code></td>
+              <td>Prompt for accurate details. "It looks like the card we have on file expired for you. Would you like me to update your card with the new expiration details or add a new payment method to use?"</td>
+            </tr>
+            <tr>
+              <td><code>insufficient_funds</code></td>
+              <td>Prompt for another payment method. "It looks like the card we have on file for you is no longer valid. Would you like me to add another payment method?"</td>
+            </tr>
+            <tr>
+              <td><code>processing_error</code></td>
+              <td>Retry payment after a minute. "It looks like there was an error processing the payment. If we could try the transaction in a minute, we can re-attempt this transaction."</td>
+            </tr>
+            <tr>
+              <td><code>duplicate_transaction</code></td>
+              <td>Retry after a minute — but first navigate to the payment log and verify no matching transaction was made within the last 60 seconds, to avoid overpayment.</td>
+            </tr>
+            <tr>
+              <td><code>fraudulent</code></td>
+              <td>Prompt for another payment method. Intentionally vague, to avoid giving actionable information to a bad actor impersonating an advocate.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <section class="case-study__section">
+        <p class="case-study__p">The fraudulent-code treatment was a real design constraint. If decline messaging had been too descriptive, a bad actor could have used that information to exploit the member's financial setup. The system had to be detailed enough for legitimate advocates to help, and vague enough to be safe if abused. Every message was reviewed with that balance in mind.</p>
+      </section>
+
+      <p class="case-study__subhead">The refund-as-transfer decision</p>
+
+      <section class="case-study__section">
+        <p class="case-study__p">Refunds became one of the most interesting design problems in the recovery system. The obvious default would have been to let advocates process refunds directly as checks. But a refund has two meanings for an MPPP member. Sometimes the member actually wants their money back. Often, the member has misapplied a payment — for example, sending a Medicare Premium payment to the MPPP lockbox address — and what they actually want is for the money to end up in the right place.</p>
+        <p class="case-study__p">I designed the refund flow to ask "where should this money go" before processing anything. The advocate sees three options: Member Refund, Medicare Premium, or Centerwell Pharmacy (the sponsor's in-house pharmacy). Each option explains when to use it. When the advocate selects a transfer type, the portal surfaces a script they read to the member explaining that the outstanding balance will adjust, along with a clear disclosure that a cash refund, if applicable, would arrive by check within roughly 14 days.</p>
+      </section>
+
+      <section class="case-study__section" id="decision">
+        <h2 class="case-study__h2">Decision</h2>
+        <p class="case-study__p">The refund-as-transfer pattern was the decision that most directly expressed the insight. A simpler design would have processed refunds as cash and left the member to re-send the funds to the right place, losing both time and money in the round trip. A more aggressive design would have refused refunds outright or routed them silently. The shipped pattern respects the member's autonomy by making every option visible, keeps funds inside the sponsor's ecosystem when the member's real need is reconciliation, and gives the advocate the language to explain what each choice means. It converts a revenue-leak moment into a reconciliation moment, without coercing anyone.</p>
+      </section>
+
+      <section class="case-study__section" id="solution">
+        <h2 class="case-study__h2">Solution</h2>
+        <p class="case-study__p">The shipped system works across the member and advocate sides of the product, with specific surfaces for each stage of the recovery journey.</p>
+      </section>
+
+      <p class="case-study__subhead">The member-facing past-due state</p>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-past-due-member-home.png — member home page past-due state: red banner, red minimum-payment display, red Pay past due button, warning about removal from the program -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Member</span>When a member is past due, the home page shifts into a clearly marked state — red banner with the overdue amount, red minimum-payment display, red Pay past due button, warning about removal from the program. The layout stays the same as the non-past-due state, so the shift is unmistakable but not disorienting.</figcaption>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">The home page is the primary communication surface. When the member is past due, the entire top section re-colors to red, the payment due date is replaced with a "Payment was due" label, and a banner running across the top of the page explains the stakes in plain language — including the risk of removal from the program. The underlying layout is unchanged, which keeps the experience navigable for members who might be alarmed by the shift.</p>
+      </section>
+
+      <p class="case-study__subhead">Failed and partial payments</p>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-past-due-failed-payment.png — failed payment modal: warning icon, brief copy, Try again / Cancel. No jargon, no error codes. -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Member</span>The failed payment modal uses a warning icon, brief copy, and two clear paths — Try again or Cancel. No jargon, no error codes, no blame.</figcaption>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">When a payment fails, the member sees a short, clear modal rather than any technical error. When a member pays less than the minimum due, the confirmation screen shows what was paid and what remains — with the remaining past due explicitly called out in red and the date by which the rest must be paid to stay in the program. The design principle throughout is to be honest about consequences without being punitive about presentation.</p>
+      </section>
+
+      <p class="case-study__subhead">Opt-out with outstanding balance</p>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-past-due-opt-out.png — opt-out with outstanding balance: full year's payment schedule with paid months in green, future payments still due in black; "Pay outstanding balance in full" option next to a red "I'll continue monthly payments" button -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Member</span>A member who opts out with a remaining balance sees their full year's schedule — paid months in green, future payments due in black. The pay-in-full option is clearly offered; the alternative is a red button that commits the member to continued monthly payments as an explicit affirmative choice, not a silent default.</figcaption>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">The opt-out flow was a distinct design problem. A member who wants to leave the program but has not yet paid their balance cannot simply be stopped from opting out. They also cannot be allowed to walk away without acknowledging the debt they still owe. The shipped design uses a calendar grid of the member's actual year, with paid months in green, to make the outstanding balance feel concrete rather than abstract. The pay-in-full option is clearly offered. The alternative is a red button that commits the member to continued monthly payments as an explicit choice, not a default.</p>
+      </section>
+
+      <p class="case-study__subhead">The advocate-facing recovery tools</p>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-past-due-advocate-banner.png — advocate view of a past-due member: banner at top of the member record with amount owed, grace period countdown, direct prompt to ask the member to make a payment -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Advocate</span>A member's past-due status surfaces as a banner at the top of the member view, with the amount owed, the grace period countdown, and a direct link to initiate a payment on the member's behalf.</figcaption>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">Advocates see past-due status on entering a member's record, with the amount owed, the grace period countdown, and a direct prompt to ask the member to make a payment. Detailed payment status — including the translated decline codes and suggested next steps — is available without needing to impersonate the member's portal.</p>
+      </section>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-past-due-refund-transfer.png — refund request flow with three routing options (Member Refund / Medicare Premium / Centerwell Pharmacy) and the script shown after a transfer is selected -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Advocate</span>The refund request flow offers three routing options rather than defaulting to a cash refund. When a transfer is selected, the advocate is given a script to read to the member explaining the consequence for their outstanding balance.</figcaption>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">The refund-as-transfer flow closes the loop by routing overpayments to the right place in the sponsor's system whenever the member's actual need is reconciliation rather than cash in hand.</p>
+      </section>
+
+      <section class="case-study__section" id="result">
+        <h2 class="case-study__h2">Result</h2>
+        <p class="case-study__p">The shipped system was designed to meet the contractually committed delinquency targets of 5% for Humana and 15% for Express Scripts. After rollout, payment method adoption across active members improved by roughly 7%, and the advocate side saw a meaningful lift in post-opt-in completion — closing the Humana gap where 95% of advocates had previously dropped off without setting up payment methods. The refund-as-transfer flow reduced cash refund volume, keeping funds inside the sponsor's ecosystem in cases where the member's real need was reconciliation.</p>
+        <p class="case-study__p">What mattered was not that the product collected more aggressively — a no-interest program cannot. What mattered was that the product made the path to repayment visible on both sides of the call, translated machine signals into human action, and treated refund requests as reconciliation questions rather than cash-outs. In a product designed to help seniors afford their medication, recovery had to feel like help, not punishment, and the shipped system is an argument that it could.</p>
+      </section>
+
+      <div class="case-study__stats">
+        <div class="case-study__stat">
+          <p class="case-study__stat-num">~7%</p>
+          <p class="case-study__stat-desc">Lift in payment method adoption across active members — achieved without late fees, interest, or credit reporting.</p>
+        </div>
+        <div class="case-study__stat">
+          <p class="case-study__stat-num">~30</p>
+          <p class="case-study__stat-desc">Stripe decline codes translated into plain-language advocate guidance and member-ready scripts — the raw code never surfaced.</p>
+        </div>
+      </div>
+
+      <nav class="case-study__prevnext" aria-label="Project navigation">
+        <a href="toyota-safety-hub.html">← Toyota Safety Hub</a>
+        <a href="mppp-calculator.html">Monthly Payment Calculator →</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Ben Dobkin</span>
+    <div class="site-footer__right">
+      <a href="mailto:bensdobkin@gmail.com">bensdobkin@gmail.com</a>
+      <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

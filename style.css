@@ -961,6 +961,103 @@ img {
   margin: 0;
 }
 
+/* ---------- Case study: pull quote, table, subhead ---------- */
+.case-study__quote {
+  padding: 0 120px;
+  margin-top: var(--sp-2);
+  scroll-margin-top: 32px;
+}
+
+.case-study__quote-inner {
+  border-left: 2px solid var(--accent);
+  padding: var(--sp-2) 0 var(--sp-2) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  max-width: 760px;
+}
+
+.case-study__quote-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.35;
+  color: var(--text-1);
+  letter-spacing: -0.48px;
+  margin: 0;
+  font-variation-settings: 'SOFT' 0, 'WONK' 1;
+}
+
+.case-study__quote-attr {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-2);
+  margin: 0;
+}
+
+.case-study__table-wrap {
+  padding: 0 120px;
+  margin-top: var(--sp-2);
+  overflow-x: auto;
+}
+
+.case-study__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+}
+
+.case-study__table th {
+  text-align: left;
+  padding: var(--sp-2) var(--sp-3) var(--sp-2) 0;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  vertical-align: bottom;
+}
+
+.case-study__table td {
+  padding: var(--sp-3) var(--sp-3) var(--sp-3) 0;
+  border-bottom: 1px dashed var(--border);
+  vertical-align: top;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--text-2);
+  letter-spacing: -0.28px;
+}
+
+.case-study__table tr:last-child td {
+  border-bottom: 1px solid var(--border);
+}
+
+.case-study__table td:first-child {
+  color: var(--text-1);
+  font-weight: 400;
+  width: 22%;
+}
+
+.case-study__table td:last-child,
+.case-study__table th:last-child {
+  padding-right: 0;
+}
+
+.case-study__subhead {
+  padding: 0 120px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin: var(--sp-3) 0 0;
+}
+
 /* ---------- Other work detail ---------- */
 .ow-detail {
   max-width: 900px;
@@ -1223,9 +1320,17 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   .case-study__stats,
   .case-study__concepts,
   .case-study__split,
+  .case-study__quote,
+  .case-study__table-wrap,
+  .case-study__subhead,
   .case-study__prevnext {
     padding-left: var(--sp-4);
     padding-right: var(--sp-4);
+  }
+
+  .case-study__quote-text {
+    font-size: 20px;
+    letter-spacing: -0.4px;
   }
 
   .case-study__overview,

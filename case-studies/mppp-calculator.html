@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monthly Payment Calculator for MPPP — Case study</title>
+  <meta name="description" content="Ben Dobkin designed the Monthly Payment Calculator for the Medicare Prescription Payment Plan — a month-by-month estimator that became the entry point for a program now reaching ~20M Medicare enrollees." />
+  <link rel="stylesheet" href="../style.css" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="../index.html" class="site-nav__brand">
+      <span class="site-nav__brand-name">Ben Dobkin</span>
+      <span class="site-nav__brand-role">Product Designer &amp; Engineer</span>
+    </a>
+    <div class="site-nav__links">
+      <a href="../index.html" class="site-nav__link active" data-page="case-studies">Case studies</a>
+      <a href="../other-work.html" class="site-nav__link" data-page="other-work">Other work</a>
+      <a href="../playground.html" class="site-nav__link" data-page="playground">Playground</a>
+      <a href="../about.html" class="site-nav__link" data-page="about">About</a>
+    </div>
+  </nav>
+
+  <main class="case-study">
+    <aside class="case-study__rail" aria-label="Section navigation">
+      <div class="case-study__rail-inner">
+        <a class="case-study__rail-item is-active" href="#overview">Overview</a>
+        <a class="case-study__rail-item" href="#problem">Problem</a>
+        <a class="case-study__rail-item" href="#insight">Insight</a>
+        <a class="case-study__rail-item" href="#process">Process</a>
+        <a class="case-study__rail-item" href="#solution">Solution</a>
+        <a class="case-study__rail-item" href="#result">Result</a>
+      </div>
+    </aside>
+
+    <article class="case-study__main">
+      <div class="case-study__hero" id="overview" aria-hidden="true">
+        <!-- TODO: assets/images/mppp-calculator-hero.png — shipped calculator output: three-column calendar grid of estimated monthly payments with OOP max progress indicator -->
+      </div>
+
+      <header class="case-study__section">
+        <div class="case-study__title-row">
+          <h1 class="case-study__title">Monthly Payment Calculator for the Medicare Prescription Payment Plan</h1>
+          <p class="case-study__title-side">2024</p>
+        </div>
+        <p class="case-study__intro">A calculator that lets Medicare Part D enrollees estimate what they'll pay each month under the new federal Prescription Payment Plan — the entry point for a program now available to roughly 20 million Medicare enrollees through Humana, Cigna, and other Part D sponsors.</p>
+      </header>
+
+      <div class="case-study__overview">
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Role</p>
+          <p class="case-study__overview-value">Founding Designer</p>
+        </div>
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Agency</p>
+          <p class="case-study__overview-value">Paytient</p>
+        </div>
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Client</p>
+          <p class="case-study__overview-value">
+            Humana<br />
+            Cigna<br />
+            Other Part D sponsors
+          </p>
+        </div>
+        <div class="case-study__overview-cell">
+          <p class="case-study__overview-label">Shipped</p>
+          <p class="case-study__overview-value">October 2024</p>
+        </div>
+      </div>
+
+      <section class="case-study__section">
+        <h2 class="case-study__h2">Summary</h2>
+        <p class="case-study__p">I designed a calculator tool that let Medicare Part D enrollees estimate what they would pay each month under the new Medicare Prescription Payment Plan — a federal program that lets seniors spread their out-of-pocket prescription costs across the calendar year instead of paying in full at the pharmacy. The calculator launched ahead of the broader program and became the primary way prospective enrollees evaluated whether the plan would help them. The full program went live in October 2024 and is now available to roughly 20 million Medicare enrollees through Humana, Cigna, and other sponsor partners — about one third of the Medicare population.</p>
+      </section>
+
+      <section class="case-study__section" id="problem">
+        <h2 class="case-study__h2">Problem</h2>
+        <p class="case-study__p">Before 2025, seniors on Medicare Part D paid for their prescriptions in full at the pharmacy counter, regardless of how much they cost. When a prescription ran into the hundreds or thousands of dollars, seniors on fixed incomes often walked away without it. That pattern of medication non-adherence driven by cost affected a meaningful share of the 65 million Americans enrolled in Medicare.</p>
+      </section>
+
+      <figure class="case-study__quote">
+        <div class="case-study__quote-inner">
+          <blockquote class="case-study__quote-text">"Once I had to turn down a prescription because I couldn't afford it. I was a little upset, because you're supposed to take this medicine for your health. But when you're on limited income, you don't have money to pay for it."</blockquote>
+          <figcaption class="case-study__quote-attr">— Trisha, research participant</figcaption>
+        </div>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">The Medicare Prescription Payment Plan was the federal response: a new program that would let enrollees pay for their covered Part D prescriptions in monthly installments over the calendar year with no interest and no fees. Paytient was building the white-labeled product that Humana, Cigna, and other Part D sponsors would use to deliver it. The problem I was given sat at the front of the whole experience — before anyone enrolled, they needed to know whether the program would actually help them.</p>
+        <p class="case-study__p">The math was not intuitive. Benefit depended on the shape of your prescription costs across the year, how early you hit the $2,000 out-of-pocket maximum, and when you enrolled. Without a way to see that clearly, seniors who would benefit were likely to dismiss the program, and seniors who would not benefit were likely to sign up and be confused when their monthly bills did not match their expectations.</p>
+      </section>
+
+      <section class="case-study__section" id="insight">
+        <h2 class="case-study__h2">Insight</h2>
+        <p class="case-study__p">The insight came out of the tension between two kinds of calculators in the landscape. Buy-now-pay-later calculators are built to convert — they show you a clean monthly number and move you toward enrollment. Loan and mortgage calculators are built to inform — they give you the full picture, including the parts that might make you reconsider.</p>
+        <p class="case-study__p">Seniors needed the second kind. The Medicare population we interviewed was budget-conscious regardless of income, with participants consistently practicing monthly budgeting and often comparing the program to the "level pay" plans they used for utility bills. They were not looking for a tool that sold them on MPPP. They were looking for a tool that respected their actual spending pattern and told them honestly what their year would look like.</p>
+        <p class="case-study__p">Part D costs are front-loaded. Prescriptions hit the deductible and initial coverage phases early in the year, and drop off sharply once a member hits the out-of-pocket maximum. An average-monthly-cost input would flatten that reality into a single number that did not reflect how any real enrollee would actually pay. The calculator had to show the shape of the year, not just a dollar amount.</p>
+      </section>
+
+      <section class="case-study__section" id="process">
+        <h2 class="case-study__h2">Process</h2>
+      </section>
+
+      <p class="case-study__subhead">Competitive audit</p>
+
+      <section class="case-study__section">
+        <p class="case-study__p">I audited 23 calculators across six categories — employee cost, medical, mortgage, car loan, buy-now-pay-later, and loan. The most instructive references clustered around a handful of patterns that mapped to what our users needed and what they didn't.</p>
+      </section>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-calculator-competitive-audit.png — landscape research board of 23 calculators across 6 categories with intuitive vs. questionable patterns -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Research</span>Landscape audit of 23 calculators across 6 categories — intuitive patterns and questionable patterns called out for each.</figcaption>
+      </figure>
+
+      <div class="case-study__table-wrap">
+        <table class="case-study__table">
+          <thead>
+            <tr>
+              <th scope="col">Calculator</th>
+              <th scope="col">What it did well</th>
+              <th scope="col">Where it fell short</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Klarna BNPL</td>
+              <td>Radically simple interaction; sheet treatment kept users in flow.</td>
+              <td>Almost no context around payment details.</td>
+            </tr>
+            <tr>
+              <td>Carvana Car Loan</td>
+              <td>Calculation visible at top and bottom of screen; clean, minimal UI.</td>
+              <td>Small type and tight padding would not work for older users.</td>
+            </tr>
+            <tr>
+              <td>Monarch Mortgage</td>
+              <td>Card treatment made the calculator stand out from educational content; monthly payment updated dynamically as inputs changed.</td>
+              <td>Mobile layout caused chart to take up a lot of vertical space.</td>
+            </tr>
+            <tr>
+              <td>Medicare Premium Calculator</td>
+              <td>Educational definitions readily available; notes prominently displayed.</td>
+              <td>Inconsistent CTA colors, small calculation values, weak hierarchy on results page.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <section class="case-study__section">
+        <p class="case-study__p">Across the audit, the patterns that mattered for our users were large tap targets, high contrast, context underneath fields rather than behind info icons, and results that updated without requiring a second action.</p>
+      </section>
+
+      <p class="case-study__subhead">Research with the target population</p>
+
+      <section class="case-study__section">
+        <p class="case-study__p">Paytient conducted 47 interviews with Medicare beneficiaries and caregivers across Missouri and other locations, with 11 participants aged 65 and up in moderated testing. Three findings shaped the calculator's direction.</p>
+      </section>
+
+      <figure class="case-study__quote">
+        <div class="case-study__quote-inner">
+          <blockquote class="case-study__quote-text">"Prescriptions are due at different times but I only get paid once a month at the beginning of the month. This would help my finances."</blockquote>
+          <figcaption class="case-study__quote-attr">— P02, research participant</figcaption>
+        </div>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">First, participants consistently compared MPPP to the "level pay" utility plans they already used — not to loans or financing. Second, every participant responded positively to viewing a table of future payments, finding it helpful for budgeting. Third, most remote participants joined sessions on tablets, which meant the calculator output needed to work on a screen where the full year could be visible at once without scrolling.</p>
+      </section>
+
+      <p class="case-study__subhead">Directions explored</p>
+
+      <section class="case-study__section">
+        <p class="case-study__p">I explored four directions before landing on the shipped design.</p>
+      </section>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-calculator-directions.png — four directions explored, each prioritizing a different balance of specificity, simplicity, and legibility -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Exploration</span>Four directions considered for the calculator — each prioritizing a different balance of specificity, simplicity, and legibility.</figcaption>
+      </figure>
+
+      <div class="case-study__table-wrap">
+        <table class="case-study__table">
+          <thead>
+            <tr>
+              <th scope="col">Direction</th>
+              <th scope="col">What it did</th>
+              <th scope="col">Why it fell short</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Single-page direct input</td>
+              <td>All monthly input fields and the output on one scrolling page.</td>
+              <td>Maximized specificity but front-loaded a dense form before users saw any value.</td>
+            </tr>
+            <tr>
+              <td>Two-question range</td>
+              <td>Asked only for total prescription cost and year-to-date spend; returned a range like $150–$210.</td>
+              <td>Simple, but the range felt uncertain and did not show how the year would actually unfold.</td>
+            </tr>
+            <tr>
+              <td>Table list</td>
+              <td>Led with a hero number for the first monthly payment, with a collapsible list of every month below.</td>
+              <td>Privileged the first payment over the full picture; required scrolling on smaller screens.</td>
+            </tr>
+            <tr>
+              <td>Calendar grid</td>
+              <td>Split input and output into two steps: month-by-month entry on its own screen, output rendered as a three-column calendar with an OOP max progress bar.</td>
+              <td>This is the direction that shipped.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <section class="case-study__section" id="solution">
+        <h2 class="case-study__h2">Solution</h2>
+        <p class="case-study__p">The calendar grid won because it was the only direction that treated every month as equally important and showed the shape of the year at a glance. The table list privileged the first payment with a hero number, which misrepresented how the program actually works — payments vary across the year and drop to zero once a member hits the out-of-pocket maximum. The two-question range was too vague for a population that wanted specificity. The single-page direct input was specific but buried the output below a dense form.</p>
+        <p class="case-study__p">In research, participants read the calendar grid as a calendar, which matched how they already thought about monthly budgeting. On tablets — the device most remote participants joined on — the full year fit in a single view without scrolling.</p>
+      </section>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-calculator-step-1-input.png — step one: month-by-month input of expected Part D prescription costs, with copy defaulting unsure users to this year's expenses -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Step 1</span>Enrollees enter their expected out-of-pocket Part D prescription costs for each month of the year. Copy tells unsure users to default to this year's expenses.</figcaption>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">On the first screen, enrollees enter their expected out-of-pocket Part D prescription costs for each month of the year. The month-by-month input respects the reality that Part D costs are not evenly distributed, and it gives users a tool precise enough to model their actual year rather than a generic average.</p>
+      </section>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-calculator-step-2-output.png — step two: estimated monthly payment schedule as a three-column calendar grid with enrollment month tagged, projected payments for each month, zeros after the OOP max is hit -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Step 2</span>The estimated monthly payment schedule rendered as a three-column calendar grid. Enrollment month tagged, projected payments shown for each month, and months past the out-of-pocket maximum correctly showing zero.</figcaption>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">On the output screen, the calculator renders the estimated monthly payment schedule as a three-column calendar grid from January through December. The enrollment month is tagged, each month's projected payment is shown, and months after the out-of-pocket maximum correctly show zero. Below the grid, a progress indicator shows the estimated annual out-of-pocket spend against the $2,000 maximum, with the remaining balance displayed alongside.</p>
+        <p class="case-study__p">The page closes with contextual copy explaining the Inflation Reduction Act coverage cap, how enrollment month affects payment distribution, and a download-to-PDF option that addresses the strong preference among seniors for printable references.</p>
+      </section>
+
+      <p class="case-study__subhead">Designed for the population</p>
+
+      <div class="case-study__table-wrap">
+        <table class="case-study__table">
+          <thead>
+            <tr>
+              <th scope="col">Consideration</th>
+              <th scope="col">How it shows up</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Accessibility</td>
+              <td>Large tap targets, high contrast, clear typographic hierarchy, clickable phone links for customer support.</td>
+            </tr>
+            <tr>
+              <td>Touchscreen-first</td>
+              <td>Tablet and mobile layouts where the full calendar output fits without scrolling.</td>
+            </tr>
+            <tr>
+              <td>Printable output</td>
+              <td>Download-to-PDF option addresses the strong preference among seniors for paper references.</td>
+            </tr>
+            <tr>
+              <td>White-label flexibility</td>
+              <td>The system flexes into each sponsor's brand — Humana's calculator feels like Humana and Cigna's feels like Cigna, without Paytient infrastructure showing through.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image">
+          <!-- TODO: assets/images/mppp-calculator-humana.png — Humana-branded landing page showing the calculator inside each sponsor's identity system -->
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">White-label</span>The Humana-branded landing page — the calculator sits inside each sponsor's identity system.</figcaption>
+      </figure>
+
+      <section class="case-study__section" id="result">
+        <h2 class="case-study__h2">Result</h2>
+        <p class="case-study__p">The Medicare Prescription Payment Plan launched in October 2024 and is now available to roughly 20 million Medicare enrollees through Humana, Cigna, and other sponsor partners — about one third of the Medicare population. The calculator was the entry point for the program and the first surface prospective enrollees touched.</p>
+        <p class="case-study__p">In user testing across 47 interviews, every participant successfully completed the calculator flow. Participants consistently described it as straightforward and easy to follow — a notable contrast with how the same participants described the broader Medicare enrollment experience as overwhelming and confusing.</p>
+      </section>
+
+      <div class="case-study__stats">
+        <div class="case-study__stat">
+          <p class="case-study__stat-num">~20M</p>
+          <p class="case-study__stat-desc">Medicare enrollees reached through Humana, Cigna, and other Part D sponsor partners — about one third of the Medicare population.</p>
+        </div>
+        <div class="case-study__stat">
+          <p class="case-study__stat-num">47/47</p>
+          <p class="case-study__stat-desc">Research participants who completed the calculator flow — the same population that described broader Medicare enrollment as overwhelming.</p>
+        </div>
+      </div>
+
+      <figure class="case-study__quote">
+        <div class="case-study__quote-inner">
+          <blockquote class="case-study__quote-text">"I think you guys have thought of everything. The size of font is great. It is very clear what you would need to do. I wish [digital products] were all like this. I think it looks amazing."</blockquote>
+          <figcaption class="case-study__quote-attr">— Kim, P19, research participant</figcaption>
+        </div>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">What mattered was not just that the tool worked, but that it gave seniors an honest answer to a question they had been unable to ask before. For a population where one missed prescription could mean walking away from medication they needed, a clear view of what the year would cost was the thing that let them decide.</p>
+      </section>
+
+      <nav class="case-study__prevnext" aria-label="Project navigation">
+        <a href="mppp-member-portal.html">← Medicare Prescription Payment Plan</a>
+        <a href="mppp-advocate-portal.html">CRM for Humana &amp; Express Scripts →</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 Ben Dobkin</span>
+    <div class="site-footer__right">
+      <a href="mailto:bensdobkin@gmail.com">bensdobkin@gmail.com</a>
+      <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
