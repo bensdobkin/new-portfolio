@@ -170,6 +170,39 @@ img {
   margin: 0;
 }
 
+.hero__word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.35em);
+  animation: hero-rise-in 0.5s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 30ms);
+  will-change: opacity, transform;
+}
+
+.hero.is-staggered .hero__subline {
+  opacity: 0;
+  transform: translateY(0.5em);
+  animation: hero-rise-in 0.6s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+  animation-delay: var(--subline-delay, 400ms);
+  will-change: opacity, transform;
+}
+
+@keyframes hero-rise-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__word,
+  .hero.is-staggered .hero__subline {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
 .hero__subline {
   font-weight: 300;
   font-size: 24px;
@@ -182,6 +215,60 @@ img {
   color: var(--text-1);
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.hero__subline a.brand-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
+  line-height: 1.15;
+  padding-bottom: 1px;
+  overflow: hidden;
+  vertical-align: bottom;
+  transition: border-color 0.45s cubic-bezier(0.7, 0, 0.3, 1), color 0.45s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.hero__subline a.brand-link > span {
+  display: inline-block;
+  transition: transform 0.45s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.hero__subline a.brand-link::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  color: var(--brand);
+  transform: translateY(105%);
+  transition: transform 0.45s cubic-bezier(0.7, 0, 0.3, 1);
+  pointer-events: none;
+}
+
+.hero__subline a.brand-link:hover {
+  border-bottom-color: var(--brand);
+}
+
+.hero__subline a.brand-link:hover > span {
+  transform: translateY(-105%);
+}
+
+.hero__subline a.brand-link:hover::after {
+  transform: translateY(0);
+}
+
+.hero__subline a.brand-link[data-brand="hubspot"] { --brand: #ff5c35; }
+.hero__subline a.brand-link[data-brand="toyota"] { --brand: #eb0a1e; }
+.hero__subline a.brand-link[data-brand="deeplocal"] { --brand: var(--highlight-purple); }
+.hero__subline a.brand-link[data-brand="apple"] { --brand: #0071e3; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__subline a.brand-link > span,
+  .hero__subline a.brand-link::after,
+  .hero__subline a.brand-link {
+    transition: none;
+  }
 }
 
 .hero--serif .hero__headline {
@@ -218,7 +305,7 @@ img {
 
 .card__image {
   width: 100%;
-  height: 500px;
+  aspect-ratio: 4 / 3;
   background: var(--bg-card);
   border-radius: var(--radius);
   display: flex;
@@ -1273,10 +1360,6 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   .grid-2 {
     grid-template-columns: 1fr;
     padding: 0 var(--sp-3) var(--sp-4);
-  }
-
-  .card__image {
-    height: 320px;
   }
 
   .card__row {
