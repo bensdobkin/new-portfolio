@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Toyota Maintenance Plans — Case study</title>
-  <meta name="description" content="Ben Dobkin led the redesign of Toyota's Maintenance Plans page — consolidating five fragmented pages into a single personalized destination for 34M+ owners and driving a 16% lift in dealer outreach." />
+  <meta name="description" content="Ben Dobkin led the redesign of Toyota's Maintenance Plans page — consolidating a fragmented multi-page experience into a single personalized destination for 34M+ owners and driving an 8% lift in dealer outreach." />
   <link rel="stylesheet" href="../style.css" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 </head>
@@ -28,14 +28,15 @@
         <a class="case-study__rail-item is-active" href="#overview">Overview</a>
         <a class="case-study__rail-item" href="#context">Context</a>
         <a class="case-study__rail-item" href="#problem">Problem</a>
-        <a class="case-study__rail-item" href="#solution">Solution</a>
+        <a class="case-study__rail-item" href="#process">Process</a>
+        <a class="case-study__rail-item" href="#final-designs">Final designs</a>
         <a class="case-study__rail-item" href="#outcome">Outcome</a>
       </div>
     </aside>
 
     <article class="case-study__main">
       <div class="case-study__hero" id="overview">
-        <img src="../assets/images/toyota-grand-highlander-beach.jpg" alt="A Toyota Grand Highlander parked on a sandy beach at golden hour, with a family gathered around it — a child with a bodyboard, a surfer in a wetsuit, a parent seated by a yellow cooler, and another parent walking hand-in-hand with a child along the Pacific coastline." />
+        <img src="../assets/images/toyota-maintenance-plans-hero.png" alt="A white Toyota SUV climbing a sage-covered hillside at golden hour, with the Eastern Sierra mountains glowing in the background." />
       </div>
 
       <header class="case-study__section">
@@ -43,7 +44,7 @@
           <h1 class="case-study__title">Toyota Maintenance Plans</h1>
           <p class="case-study__title-side"><a href="https://www.toyota.com/maintenance-plans/" target="_blank" rel="noopener">toyota.com/maintenance-plans</a></p>
         </div>
-        <p class="case-study__intro">I consolidated Toyota's five-page maintenance plan experience into a single personalized destination for 34M+ owners, lifting dealer outreach — the primary conversion signal — by 16%.</p>
+        <p class="case-study__intro">I led the redesign of Toyota's Maintenance Plans page, consolidating a fragmented multi-page experience into a single, personalized destination for 34M+ Toyota owners that helped find the right maintenance plan for their vehicle. The redesign drove an 8% increase in conversion, measured by users who reached out to their dealer to purchase a maintenance plan.</p>
       </header>
 
       <div class="case-study__overview">
@@ -67,44 +68,49 @@
 
       <section class="case-study__section" id="context">
         <h2 class="case-study__h2">Context</h2>
-        <p class="case-study__p">Toyota offers a comprehensive maintenance plan suite: ToyotaCare, standard on every new vehicle; ToyotaCare Plus for extended coverage; and Toyota Service Care for flexible options. With 34M+ Toyotas on U.S. roads, the opportunity to help owners understand, compare, and act on these plans was enormous. The existing experience was squandering it.</p>
-        <p class="case-study__p">Plan content lived across five separate areas of toyota.com — a main landing page, three individual plan pages, and a standalone ToyotaCare instance — each repeating the same material in slightly different ways. Users looped between them without ever reaching the answer they had arrived with.</p>
+        <p class="case-study__p">Toyota offers a comprehensive maintenance plan suite: ToyotaCare, standard on every new vehicle; ToyotaCare Plus for extended coverage; and Toyota Service Care for flexible options. With 34M+ Toyota owners, the opportunity to help them understand, compare, and act on these plans was enormous. The existing experience was squandering it.</p>
+        <p class="case-study__p">Plan content lived across 3 separate areas of toyota.com, a main landing page, individual plan pages, and a standalone ToyotaCare instance, each repeating the same material in slightly different ways. Users looped between them without ever reaching the answer they had arrived with.</p>
       </section>
 
-      <div class="case-study__numbered">
-        <div class="case-study__numbered-cell">
-          <p class="case-study__numbered-num">1</p>
-          <div class="case-study__numbered-body">
-            <p class="case-study__numbered-title">Scattered across five pages</p>
-            <p class="case-study__numbered-desc">Content was fragmented across a main landing page, three individual plan pages, and a standalone ToyotaCare instance — each repeating similar material with no clear hierarchy.</p>
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image case-study__figure-image--variations case-study__figure-image--variations-3">
+          <div class="case-study__variation">
+            <img src="../assets/images/toyota-maintenance-tcare-1.png" alt="Existing ToyotaCare landing page on toyota.com — a hero with a Toyota-branded service technician, a vehicle-selector card, and stacked sections for ToyotaCare, ToyotaCare Plus, and Toyota Service Care, each with services, roadside assistance lists, and a Learn More link." />
+          </div>
+          <div class="case-study__variation">
+            <img src="../assets/images/toyota-maintenance-tcare-2.png" alt="Existing standalone ToyotaCare Plus page repeating coverage details and roadside services with a separate hero and CTA — disconnected from the main landing page." />
+          </div>
+          <div class="case-study__variation">
+            <img src="../assets/images/toyota-maintenance-tcare-3.png" alt="Existing standalone Toyota Service Care page restating the same maintenance and roadside benefits in a different layout — a third copy of overlapping content." />
           </div>
         </div>
-        <div class="case-study__numbered-cell">
-          <p class="case-study__numbered-num">2</p>
-          <div class="case-study__numbered-body">
-            <p class="case-study__numbered-title">No path to a recommendation</p>
-            <p class="case-study__numbered-desc">The page described options but never helped anyone choose. The quiz designed to bridge that gap was buried several clicks deep — most users never found it.</p>
+        <figcaption class="case-study__caption">The logged-out experience. Three fragmented pages users had to navigate to compare plans.</figcaption>
+      </figure>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image case-study__figure-image--variations">
+          <div class="case-study__variation">
+            <img src="../assets/images/toyota-maintenance-current-1.png" alt="Existing logged-in maintenance plans page with a vehicle selected — plan information personalized to the user's Toyota but still split across the same disjointed sections." />
+          </div>
+          <div class="case-study__variation">
+            <img src="../assets/images/toyota-maintenance-current-2.png" alt="Existing logged-in detail view for a selected Toyota — coverage status and plan specifics shown without a clear recommendation or path forward." />
           </div>
         </div>
-        <div class="case-study__numbered-cell">
-          <p class="case-study__numbered-num">3</p>
-          <div class="case-study__numbered-body">
-            <p class="case-study__numbered-title">ToyotaCare hidden in plain sight</p>
-            <p class="case-study__numbered-desc">The no-cost plan included with every new Toyota was never labeled as such — so owners were potentially unaware of coverage they already had.</p>
-          </div>
-        </div>
-      </div>
+        <figcaption class="case-study__caption">The logged-in experience. Even with a vehicle selected, owners hit the same fragmented content.</figcaption>
+      </figure>
 
       <section class="case-study__section" id="problem">
         <h2 class="case-study__h2">Problem</h2>
-        <p class="case-study__p">Research surfaced two distinct user types arriving with fundamentally different needs. Toyota shoppers were evaluating plans before a purchase decision — trying to understand what existed and which option made sense for their situation. Toyota owners already had a vehicle and needed to know whether they had a plan, what it covered, and whether they needed to act before it expired.</p>
-        <p class="case-study__p">Underneath both sat a single shared problem: nobody could figure out which plan was right for them. The page presented information but never gave a recommendation. That gap — between presenting plans and actually guiding a decision — became the central design challenge.</p>
+        <p class="case-study__p">Research surfaced two distinct user types arriving with fundamentally different needs.</p>
+        <p class="case-study__p">Toyota shoppers were evaluating plans before a purchase decision.</p>
+        <p class="case-study__p">Toyota owners already had a vehicle and needed to know whether they had a plan, what it covered, and whether they needed to act before it expired.</p>
+        <p class="case-study__p">Underneath both sat a single shared problem: nobody could figure out which plan was right for them. The page presented information but never gave a recommendation. That gap, between presenting plans and actually guiding a decision, became the central design challenge.</p>
       </section>
 
       <div class="case-study__compare">
         <div class="case-study__compare-col">
           <div class="case-study__compare-header">Pain points</div>
-          <div class="case-study__compare-cell">Plan info scattered across five pages, each repeating the last.</div>
+          <div class="case-study__compare-cell">Plan info scattered across three pages, each repeating the last.</div>
           <div class="case-study__compare-cell">No way to tell which plan applied to a specific vehicle.</div>
           <div class="case-study__compare-cell">Key differences between plans were indistinguishable.</div>
           <div class="case-study__compare-cell">Plans for EV and hydrogen fuel-cell vehicles were missing entirely.</div>
@@ -118,14 +124,14 @@
         </div>
       </div>
 
-      <section class="case-study__section" id="solution">
-        <h2 class="case-study__h2">Solution</h2>
-        <p class="case-study__p">I ran a competitive audit across in-vertical and out-of-vertical brands to see how others handled complex plan comparison. Porsche led with concise, well-organized touts that started high-level and revealed detail on scroll — respecting both the casual browser and the serious researcher. HubSpot, out of vertical, made cross-plan comparison effortless through scannable, organized layouts. Both pointed at the same principle: lead with clarity, reward depth. The existing Toyota experience did neither.</p>
+      <section class="case-study__section" id="process">
+        <h2 class="case-study__h2">Process</h2>
+        <p class="case-study__p">I ran a competitive audit across in-vertical and out-of-vertical brands to see how others handled complex plan comparison. Porsche led with concise, well-organized touts that started high-level and revealed detail on scroll. HubSpot, out of vertical, made cross-plan comparison effortless through scannable, organized layouts. Both pointed at the same principle: lead with clarity, reward depth. The existing Toyota experience did neither.</p>
       </section>
 
       <figure class="case-study__figure">
         <div class="case-study__figure-image">
-          <!-- TODO: lo-fi competitive audit visual -->
+          <img src="../assets/images/toyota-maintenance-competitive-audit.png" alt="Vertical competitive audit board comparing in-vertical maintenance plan pages — Porsche's progressive-disclosure touts and other automotive brands — with annotations on hierarchy, comparison patterns, and recommendation flows." />
         </div>
         <figcaption class="case-study__caption"><span class="case-study__caption-tag">Lo-fi</span>Competitive audit notes across in- and out-of-vertical brands.</figcaption>
       </figure>
@@ -145,48 +151,76 @@
         <p class="case-study__p">The more consequential challenge was the recommendation component — the one thing the old experience had never delivered. I explored three directions using different interaction patterns from the design system. The radio-button approach won, not for the pattern itself but because it produced a specific, personalized recommendation from just two inputs: vehicle age and mileage. Two questions resolved the confusion an entire page of content couldn't.</p>
       </section>
 
-      <figure class="case-study__figure">
-        <div class="case-study__figure-image">
-          <!-- TODO: hi-fi of the recommendation component -->
-        </div>
-        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Hi-fi</span>The shipped recommendation component — two inputs, one personalized answer.</figcaption>
-      </figure>
-
-      <section class="case-study__section">
+      <section class="case-study__section" id="final-designs">
+        <h2 class="case-study__h2">Final designs</h2>
         <p class="case-study__p">The shipped experience split cleanly by who the user was. Shoppers got a logged-out destination that consolidated everything previously spread across five pages — clean comparison cards, a prominent recommendation component, and a "learn more" modal for anyone who wanted to go deeper before contacting a dealer. Owners got a logged-in experience personalized to their vehicle, surfacing current plan status and a recommendation tag that reflected where they were in their ownership journey. For owners whose ToyotaCare was near expiration, the page proactively surfaced next steps so they never fell through the gap between one plan ending and another beginning.</p>
       </section>
 
-      <div class="case-study__split">
-        <div class="case-study__split-cell">
-          <div class="case-study__split-image">
-            <!-- TODO: shopper logged-out screenshot -->
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image case-study__figure-image--contain">
+          <img src="../assets/images/toyota-maintenance-shipped-logged-out.png" alt="Shipped logged-out maintenance plans page on toyota.com — a campground hero with the headline Maintenance Plans, the Find The Right Maintenance Plan recommendation component with vehicle-age and mileage inputs, an Explore Our Plans grid with ToyotaCare, ToyotaCare Plus Service Drive, and Toyota Service Care cards, a Mirai and bZ4X maintenance section, a Get to know our plans video pair, and a What Vehicles Are Eligible accordion." />
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Shopper</span>Logged-out destination — every plan consolidated onto one page, with a personalized recommendation up top.</figcaption>
+      </figure>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image case-study__figure-image--variations">
+          <div class="case-study__variation">
+            <p class="case-study__variation-label">Vehicle selected — recommend ToyotaCare Plus</p>
+            <img src="../assets/images/toyota-maintenance-shipped-logged-in-no-tcare.png" alt="Shipped logged-in maintenance plans page personalized for a 2022 Toyota Corolla — the hero swaps in the owner's vehicle and a We Recommend ToyotaCare Plus Service Drive callout appears with coverage details and a Learn More link." />
           </div>
-          <div class="case-study__split-meta">
-            <p class="case-study__split-label">Shopper</p>
-            <p class="case-study__split-title">Logged-out experience</p>
-            <p class="case-study__split-desc">Comparison cards, the recommendation component, and opt-in depth for deeper research before contacting a dealer.</p>
+          <div class="case-study__variation">
+            <p class="case-study__variation-label">Vehicle selected — ToyotaCare expired</p>
+            <img src="../assets/images/toyota-maintenance-shipped-logged-in-expired.png" alt="Shipped logged-in maintenance plans page for an owner whose ToyotaCare has expired — proactive next-steps surfaced inline so the owner never falls through the gap between one plan ending and another beginning." />
           </div>
         </div>
-        <div class="case-study__split-cell">
-          <div class="case-study__split-image">
-            <!-- TODO: owner logged-in screenshot -->
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Owner</span>Logged-in views personalized to the owner's vehicle and ownership stage — including a proactive expiration state.</figcaption>
+      </figure>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image case-study__figure-image--variations case-study__figure-image--variations-3">
+          <div class="case-study__variation">
+            <p class="case-study__variation-label">Empty</p>
+            <img src="../assets/images/toyota-maintenance-shipped-wizard-1.png" alt="Recommendation component in its empty state — Select the age of your vehicle and Select the mileage on your vehicle radio groups, with no option chosen yet." />
           </div>
-          <div class="case-study__split-meta">
-            <p class="case-study__split-label">Owner</p>
-            <p class="case-study__split-title">Logged-in experience</p>
-            <p class="case-study__split-desc">Personalized to the owner's vehicle — current plan status, recommendation tag, and proactive next steps.</p>
+          <div class="case-study__variation">
+            <p class="case-study__variation-label">Inputs selected</p>
+            <img src="../assets/images/toyota-maintenance-shipped-wizard-2.png" alt="Recommendation component with both inputs selected — vehicle age and mileage chosen, ready to surface a personalized plan." />
+          </div>
+          <div class="case-study__variation">
+            <p class="case-study__variation-label">Recommendation</p>
+            <img src="../assets/images/toyota-maintenance-shipped-wizard-3.png" alt="Recommendation component showing a personalized plan suggestion based on the owner's vehicle age and mileage, with a Contact A Dealer call to action." />
           </div>
         </div>
-      </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Recommendation</span>Two inputs, one personalized answer — the radio-button flow that resolved the gap an entire page of content couldn't.</figcaption>
+      </figure>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image case-study__figure-image--variations case-study__figure-image--variations-3">
+          <div class="case-study__variation">
+            <p class="case-study__variation-label">ToyotaCare</p>
+            <img src="../assets/images/toyota-maintenance-shipped-modal-1.png" alt="Learn-more modal for ToyotaCare — coverage details, services list, and roadside assistance benefits surfaced in an overlay so users could go deep without leaving the page." />
+          </div>
+          <div class="case-study__variation">
+            <p class="case-study__variation-label">ToyotaCare Plus</p>
+            <img src="../assets/images/toyota-maintenance-shipped-modal-2.png" alt="Learn-more modal for ToyotaCare Plus — extended coverage specifics with the same on-page overlay pattern." />
+          </div>
+          <div class="case-study__variation">
+            <p class="case-study__variation-label">Toyota Service Care</p>
+            <img src="../assets/images/toyota-maintenance-shipped-modal-3.png" alt="Learn-more modal for Toyota Service Care — flexible coverage details following the same overlay pattern." />
+          </div>
+        </div>
+        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Depth</span>Per-plan learn-more modals — opt-in depth for serious researchers without overwhelming the casual browser.</figcaption>
+      </figure>
 
       <section class="case-study__section" id="outcome">
         <h2 class="case-study__h2">Outcome</h2>
-        <p class="case-study__p">The redesigned page drove a 16% lift in dealer outreach — Toyota's primary signal for plan purchases — at the scale of 34M+ vehicles on U.S. roads. The step-change wasn't just aggregation. Five fragmented pages became one, but the real unlock was finally answering the question users had always been asking: not "what are my options?" but "which one is right for me?"</p>
+        <p class="case-study__p">The redesigned page drove an 8% lift in dealer outreach — Toyota's primary signal for plan purchases — at the scale of 34M+ vehicles on U.S. roads. The step-change wasn't just aggregation. Five fragmented pages became one, but the real unlock was finally answering the question users had always been asking: not "what are my options?" but "which one is right for me?"</p>
       </section>
 
       <div class="case-study__stats">
         <div class="case-study__stat">
-          <p class="case-study__stat-num">+16%</p>
+          <p class="case-study__stat-num">+8%</p>
           <p class="case-study__stat-desc">Lift in dealer outreach — Toyota's primary signal for plan purchases.</p>
         </div>
         <div class="case-study__stat">
