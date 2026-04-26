@@ -918,7 +918,6 @@ img {
   padding: var(--sp-3);
   background: #f7f7f7;
   border: 1px dashed var(--border);
-  border-bottom: none;
   font-size: 14px;
   font-weight: 400;
   color: var(--text-1);
@@ -948,7 +947,7 @@ img {
 .case-study__compare--equal-rows {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto repeat(3, 1fr);
+  grid-template-rows: auto 1fr;
   grid-auto-flow: column;
 }
 
@@ -1030,8 +1029,31 @@ img {
   display: block;
 }
 
+.case-study__figure-image--variations-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.case-study__variation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  width: 100%;
+}
+
+.case-study__variation-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin: 0;
+}
+
 @media (max-width: 900px) {
-  .case-study__figure-image--variations {
+  .case-study__figure-image--variations,
+  .case-study__figure-image--variations-3 {
     grid-template-columns: 1fr;
     gap: var(--sp-3);
     padding: var(--sp-3);
@@ -1058,14 +1080,14 @@ img {
 }
 
 .case-study__stats {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   padding: 0 120px;
   gap: var(--sp-5);
   margin-top: var(--sp-2);
 }
 
 .case-study__stat {
-  flex: 1 0 0;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -1168,7 +1190,7 @@ img {
 /* ---------- Case study: pull quote, table, subhead ---------- */
 .case-study__quote {
   padding: 0 120px;
-  margin-top: var(--sp-2);
+  margin: var(--sp-2) 0 0;
   scroll-margin-top: 32px;
 }
 
@@ -1198,6 +1220,22 @@ img {
   font-size: 12px;
   color: var(--text-2);
   margin: 0;
+}
+
+.case-study__quote--boxed .case-study__quote-inner {
+  border-left: none;
+  border: 1px dashed var(--border);
+  padding: var(--sp-3);
+  max-width: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.case-study__quote--boxed .case-study__quote-text {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 300;
+  font-variation-settings: normal;
 }
 
 .case-study__table-wrap {
@@ -1537,10 +1575,13 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
   .case-study__overview,
   .case-study__numbered,
   .case-study__compare,
-  .case-study__stats,
   .case-study__concepts,
   .case-study__split {
     flex-direction: column;
+  }
+
+  .case-study__stats {
+    grid-template-columns: 1fr;
   }
 
   .case-study__compare--equal-rows {

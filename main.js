@@ -142,8 +142,12 @@
     var releaseTimer;
 
     links.forEach(function (link) {
-      link.addEventListener('click', function () {
+      link.addEventListener('click', function (e) {
         var href = link.getAttribute('href') || '';
+        if (href === '#overview') {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
         setActive(href.replace(/^#/, ''));
         suppressObserver = true;
         clearTimeout(releaseTimer);
