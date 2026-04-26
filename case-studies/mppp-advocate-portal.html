@@ -26,11 +26,11 @@
     <aside class="case-study__rail" aria-label="Section navigation">
       <div class="case-study__rail-inner">
         <a class="case-study__rail-item is-active" href="#overview">Overview</a>
+        <a class="case-study__rail-item" href="#my-role">My role</a>
+        <a class="case-study__rail-item" href="#context">Context</a>
         <a class="case-study__rail-item" href="#problem">Problem</a>
-        <a class="case-study__rail-item" href="#insight">Insight</a>
         <a class="case-study__rail-item" href="#process">Process</a>
-        <a class="case-study__rail-item" href="#decision">Decision</a>
-        <a class="case-study__rail-item" href="#solution">Solution</a>
+        <a class="case-study__rail-item" href="#solution">Final designs</a>
         <a class="case-study__rail-item" href="#result">Result</a>
       </div>
     </aside>
@@ -45,7 +45,7 @@
           <h1 class="case-study__title">Advocate Portal for the Medicare Prescription Payment Plan</h1>
           <p class="case-study__title-side">2024–2025</p>
         </div>
-        <p class="case-study__intro">I designed a standalone internal product for customer service advocates supporting Medicare Prescription Payment Plan members — reducing average call time by ~38% and replacing an impersonation-based workflow across Humana, Express Scripts, and Careplus.</p>
+        <p class="case-study__intro">I designed a standalone internal product for customer service advocates supporting Medicare Prescription Payment Plan members, reducing average call time by ~38% and replacing an impersonation-based workflow across Humana, Express Scripts, and Cigna that dropped time spent adding a payment method by ~42%.</p>
       </header>
 
       <div class="case-study__overview">
@@ -54,7 +54,7 @@
           <p class="case-study__overview-value">Founding Designer</p>
         </div>
         <div class="case-study__overview-cell">
-          <p class="case-study__overview-label">Agency</p>
+          <p class="case-study__overview-label">Company</p>
           <p class="case-study__overview-value">Paytient</p>
         </div>
         <div class="case-study__overview-cell">
@@ -62,26 +62,41 @@
           <p class="case-study__overview-value">
             Humana<br />
             Express Scripts<br />
-            Careplus
+            Cigna
           </p>
         </div>
         <div class="case-study__overview-cell">
           <p class="case-study__overview-label">Shipped</p>
-          <p class="case-study__overview-value">2024–2025</p>
+          <p class="case-study__overview-value">Oct 2024</p>
         </div>
       </div>
 
-      <section class="case-study__section">
-        <h2 class="case-study__h2">Summary</h2>
-        <p class="case-study__p">I designed a standalone internal product for customer service advocates who support Medicare Prescription Payment Plan members across Humana, Express Scripts, and Careplus. The portal replaced an earlier workflow in which advocates impersonated the member's own portal to provide support — a model that was slow, friction-heavy, and poorly suited to a senior population. The shipped tool reduced average call time by approximately 38% and gave advocates direct control over the workflows they use most: enrollment, payment methods, autopay, payments, claims lookup, and refund handling.</p>
+      <section class="case-study__section" id="my-role">
+        <h2 class="case-study__h2">My role</h2>
+        <p class="case-study__p">I was the Founding Product Designer on this project to ship this work. I started alongside a Product Manager and Staff Engineer to build this product and the design system from the ground up in less than 10 months.</p>
+      </section>
+
+      <section class="case-study__section" id="context">
+        <h2 class="case-study__h2">Context</h2>
+        <p class="case-study__p">The Medicare Prescription Payment Plan was a net-new federal program that allowed seniors on Part D to spread their out-of-pocket prescription costs over the calendar year instead of paying in full at the pharmacy.</p>
+        <p class="case-study__p">Paytient stepped in to create a white-labeled product offering to support the end-to-end needs from this CRM portal for customer reps to use when supporting members, to a member portal and a calculator tool.</p>
       </section>
 
       <section class="case-study__section" id="problem">
         <h2 class="case-study__h2">Problem</h2>
-        <p class="case-study__p">When Paytient launched the Medicare Prescription Payment Plan, customer service advocates at each sponsor were the humans on the other end of every confused call. A 72-year-old member calling in because she did not understand her bill, because her autopay failed, or because she wanted to opt out, was routed to an advocate trained on the program. The advocate's job was to resolve the issue on the call, and the company measured advocates on the time it took them to do so.</p>
-        <p class="case-study__p">The original support model had advocates impersonating the member's portal. When a member called in, the advocate would authenticate into a view of that member's own account, navigate the member-facing interface, and guide the call from there. This was fast to build because it reused an experience that already existed. In practice, it failed in several ways at once. The member's portal was designed for a senior managing their own account once a month, not for an operator managing a hundred accounts a day. Advocates could see only what members could see — missing the confirmation numbers, participation logs, opt-in channels, reason codes, and eligibility dates they needed to actually resolve a call. And the authentication flow itself was a friction point: members often did not remember their email or password, and even a two-minute credential recovery was a meaningful percentage of an advocate's handle time budget.</p>
+        <p class="case-study__p">Customer reps were the humans on the other end of every call when a member needed support. The original model had them impersonating the member portal. When a call came in, the advocate authenticated into that member's account and navigated the member-facing interface to guide the conversation. It was fast to build. It failed in several ways at once.</p>
+        <ul class="case-study__list">
+          <li>The portal was designed for a senior managing her own account once a month, not an operator handling hundreds of accounts a day.</li>
+          <li>Customer reps could only see what members could see, which meant no confirmation numbers, no opt-in channel, no reason codes, no eligibility dates.</li>
+          <li>Authentication was its own tax: members often couldn't remember their login, and two minutes of credential recovery was a meaningful slice of a customer's time budget.</li>
+        </ul>
         <p class="case-study__p">The support model needed to be rebuilt as its own product.</p>
       </section>
+
+      <figure class="case-study__figure">
+        <div class="case-study__figure-image"></div>
+        <figcaption class="case-study__caption">Impersonation workflow</figcaption>
+      </figure>
 
       <div class="case-study__compare">
         <div class="case-study__compare-col">
@@ -100,163 +115,74 @@
         </div>
       </div>
 
-      <section class="case-study__section" id="insight">
-        <h2 class="case-study__h2">Insight</h2>
-        <p class="case-study__p">The insight was recognizing that advocates were users of their own product, not operators of someone else's. A member-facing product is designed for a senior managing a single relationship with a program — accessed occasionally, with deliberately thinned information density so the experience feels simple. An advocate-facing product is the opposite: the primary workspace for someone managing dozens of relationships a day, accessed constantly, where density, lookup speed, write access, and decision support are the entire point.</p>
-        <p class="case-study__p">Impersonation had papered over this by reusing a member's interface for an advocate's workflow. The design brief was to build the tool that advocates actually needed, which would look, feel, and behave differently from the product members used — because the two audiences have nothing in common except the data underneath.</p>
-        <p class="case-study__p">The decision point was whether to invest in a parallel product or continue extending impersonation. Extending impersonation would have been cheaper in the short term. Building a parallel product meant designing a full information architecture, a full action model, and a full set of workflows from scratch. The evidence that pushed the decision was the friction data: advocates reported the impersonation flow as their single biggest time sink, credential recovery alone was costing minutes per call, and the call-time metric advocates were measured on was directly affected.</p>
-      </section>
-
       <section class="case-study__section" id="process">
         <h2 class="case-study__h2">Process</h2>
-      </section>
-
-      <p class="case-study__subhead">Listening to the actual users</p>
-
-      <section class="case-study__section">
-        <p class="case-study__p">I spent time with customer service advocates and their leadership at both Humana and Express Scripts to understand the shape of a support call, the moments where impersonation failed, and the actions advocates needed to take that the member's portal would not let them.</p>
-        <p class="case-study__p">A few patterns emerged. Advocates needed to look up members by Medicare Beneficiary Identifier or member ID, not by email. They needed to see participation history — when someone opted in, by what channel, and what confirmation number was issued. They needed to take action on the member's behalf: enrolling a new member, unenrolling a member, adding or editing a payment method, enabling or disabling autopay, making a payment, and processing refunds. They needed session tracking for compliance and quality assurance. And they needed all of this without leaving the page or authenticating as the member.</p>
-        <p class="case-study__p">None of this was possible in impersonation.</p>
-      </section>
-
-      <p class="case-study__subhead">Information architecture</p>
-
-      <section class="case-study__section">
-        <p class="case-study__p">I structured the portal around the domains of information advocates actually worked in, rather than around member-facing tasks. The member portal is organized around things a member does — home, claims, payments, account. The advocate portal is organized around data domains an operator needs to pull from quickly.</p>
-      </section>
-
-      <div class="case-study__table-wrap">
-        <table class="case-study__table">
-          <thead>
-            <tr>
-              <th scope="col">Section</th>
-              <th scope="col">What it does</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Eligibility &amp; Participation</td>
-              <td>Part D eligibility, participation status, opt-in and opt-out history with channels, confirmation numbers, and reason codes.</td>
-            </tr>
-            <tr>
-              <td>Claims</td>
-              <td>Prescription claim history, outstanding balance, year-to-date spend, and adjusted or reversed claim visibility.</td>
-            </tr>
-            <tr>
-              <td>Payments</td>
-              <td>Payment schedule, payment log, saved payment methods, autopay management, refund handling, and quick actions for payment methods, autopay, and payments.</td>
-            </tr>
-            <tr>
-              <td>Member Details</td>
-              <td>Personal details, account information, payment methods including closed and expired accounts, and Medicare identifiers.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <section class="case-study__section">
-        <p class="case-study__p">A member can see a subset of this. An advocate can see all of it, edit most of it, and act on the member's behalf within it. The deliberate asymmetry between the two portals is the whole point.</p>
-      </section>
-
-      <figure class="case-study__figure">
-        <div class="case-study__figure-image">
-          <!-- TODO: assets/images/mppp-advocate-portal-ia.png — four-section IA overview: Eligibility & Participation, Claims, Payments, Member Details -->
-        </div>
-        <figcaption class="case-study__caption"><span class="case-study__caption-tag">IA</span>The advocate portal's four-section information architecture, organized around data domains an operator needs rather than tasks a member performs.</figcaption>
-      </figure>
-
-      <p class="case-study__subhead">Scope expansion from feedback</p>
-
-      <section class="case-study__section">
-        <p class="case-study__p">The first version of the product was narrow. It covered member details and enrollment and not much else. Advocates could see a member's basic information and opt them into the program, but anything else required falling back to impersonation. The team originally intended to keep impersonation as the primary workflow and the advocate portal as a supporting tool.</p>
-        <p class="case-study__p">Direct feedback from advocates changed the plan. Multiple rounds of input from customer service leadership at Humana and Express Scripts pointed in the same direction: advocates wanted to stop impersonating members entirely, and they wanted every action a member could take to be available directly in the advocate tool. The scope expanded over several releases to cover payment method management, autopay enrollment, payment processing, refund handling, and detailed payment status including translated decline codes from the payment processor.</p>
-        <p class="case-study__p">The commitment that defined the final product: <strong>an advocate should never have to enter the member's portal</strong>. Whatever the member can do, the advocate can do from here, with the additional information and write access their job requires.</p>
-      </section>
-
-      <section class="case-study__section" id="decision">
-        <h2 class="case-study__h2">Decision</h2>
-        <p class="case-study__p">The decision that shaped the whole product was to invest in a standalone parallel experience rather than continue extending impersonation. Extending impersonation would have been incrementally faster in the short term but would have preserved the authentication friction, the density mismatch, and the write-access limitations that were costing advocates time on every call. Building a parallel product required designing a full information architecture and action model from scratch, but it directly addressed the metric advocates were measured on. The measurable outcome — a 38% reduction in average call time — validated the decision.</p>
+        <p class="case-study__p">I spent time with customer reps to understand the shape of a support call, the moments where impersonation failed, and the actions advocates needed to take that the member's portal would not let them.</p>
+        <p class="case-study__p">I structured the portal around the domains of information customer reps actually worked in, rather than around member-facing tasks. The member portal is organized around things a member does — home, claims, payments, account. The advocate portal is organized around data domains an operator needs to pull from quickly.</p>
       </section>
 
       <section class="case-study__section" id="solution">
-        <h2 class="case-study__h2">Solution</h2>
-        <p class="case-study__p">The shipped advocate portal is a purpose-built internal product covering every action an advocate takes during a support call — with the information density and direct-action capability that member-facing products are designed to avoid.</p>
+        <h2 class="case-study__h2">Final designs</h2>
+        <p class="case-study__p">The shipped advocate portal is a purpose-built internal product covering every action an advocate takes during a support call, with the information density and direct-action capability that member-facing products are designed to avoid.</p>
       </section>
-
-      <p class="case-study__subhead">Direct member lookup and context</p>
 
       <figure class="case-study__figure">
-        <div class="case-study__figure-image">
-          <!-- TODO: assets/images/mppp-advocate-portal-lookup.png — member search by identifier (not credential), full-context member view, session tracking with copyable session ID -->
-        </div>
-        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Lookup</span>Advocates search for members by identifier, not credential, and enter a full-context member view with session tracking for compliance and QA.</figcaption>
+        <div class="case-study__figure-image"></div>
+        <figcaption class="case-study__caption">Member lookup and full-context view</figcaption>
       </figure>
-
-      <section class="case-study__section">
-        <p class="case-study__p">Advocates enter a member view by searching for the member's identifier, with no authentication of the member required. Every session is tracked with a copyable session ID for compliance and call-quality review.</p>
-      </section>
-
-      <p class="case-study__subhead">Eligibility and participation workflows</p>
 
       <figure class="case-study__figure">
-        <div class="case-study__figure-image">
-          <!-- TODO: assets/images/mppp-advocate-portal-eligibility.png — Part D plan dates, contract/segment IDs, opt-in/opt-out history with channels, confirmation numbers, direct opt-out control -->
-        </div>
-        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Eligibility</span>The Eligibility &amp; Participation view shows Part D plan dates, contract and segment IDs, opt-in and opt-out history, channels, and confirmation numbers — with a direct opt-out control for advocates handling that flow over the phone.</figcaption>
+        <div class="case-study__figure-image"></div>
+        <figcaption class="case-study__caption">Eligibility and participation</figcaption>
       </figure>
-
-      <section class="case-study__section">
-        <p class="case-study__p">This section gives advocates the context that members themselves do not typically see or understand: which specific Part D plan the member is on, when they opted in, through what channel, with what confirmation number, and every participation status change over time. The opt-out control sits in this section so advocates can process opt-outs directly during the call that initiated the request.</p>
-      </section>
-
-      <p class="case-study__subhead">Claims visibility</p>
 
       <figure class="case-study__figure">
-        <div class="case-study__figure-image">
-          <!-- TODO: assets/images/mppp-advocate-portal-claims.png — claims visibility: outstanding MPPP balance, YTD spend, claim status (Paid, Adjusted, Reversed), 24h reflection note -->
-        </div>
-        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Claims</span>Claims visibility includes outstanding MPPP balance, year-to-date spend, individual claim status (Paid, Adjusted, Reversed), and the fine print that claims may take up to 24 hours to reflect recent prescription activity.</figcaption>
+        <div class="case-study__figure-image"></div>
+        <figcaption class="case-study__caption">Claims and payments</figcaption>
       </figure>
-
-      <section class="case-study__section">
-        <p class="case-study__p">Advocates can see every claim, its status, its amount, and the pharmacy it originated from. The outstanding balance and year-to-date spend cards are surfaced prominently because they are the numbers advocates are asked about most often during calls.</p>
-      </section>
-
-      <p class="case-study__subhead">Payments and payment method management</p>
-
-      <figure class="case-study__figure">
-        <div class="case-study__figure-image">
-          <!-- TODO: assets/images/mppp-advocate-portal-payments.png — Payments section: quick actions, payment schedule, sortable payment log, saved payment methods with autopay status, refund request entry point -->
-        </div>
-        <figcaption class="case-study__caption"><span class="case-study__caption-tag">Payments</span>The Payments section consolidates quick actions, the payment schedule, a sortable payment log, saved payment methods with autopay status, and the ability to request refunds directly.</figcaption>
-      </figure>
-
-      <section class="case-study__section">
-        <p class="case-study__p">Payments is the densest section of the product and the one that took the most iteration to get right. Advocates can add or remove payment methods on behalf of the member, enroll or disable autopay, process one-time payments, view the full history of every payment attempt with confirmation numbers and reason codes, and initiate refunds. This is the section that most directly replaced impersonation — every payment-related action that previously required the advocate to drive the member's screen is now native here.</p>
-      </section>
-
-      <p class="case-study__subhead">Advocate-only features</p>
-
-      <section class="case-study__section">
-        <p class="case-study__p">Beyond feature parity with the member portal, the advocate side has meaningful capabilities members do not have access to: translated payment processor decline codes with scripted guidance for the advocate to read to the member, a refund flow that offers reconciliation routing alternatives (Medicare Premium and Centerwell Pharmacy) rather than defaulting to cash refunds, and a past-due banner that surfaces at the top of the member view with a direct link to initiate a payment. These features are covered in more detail in the <a href="mppp-past-due.html">past-due and recovery case study</a>.</p>
-      </section>
 
       <section class="case-study__section" id="result">
         <h2 class="case-study__h2">Result</h2>
-        <p class="case-study__p">The shipped advocate portal reduced average call time by approximately 38%. Advocates are measured on call time, so this number translates directly to operational capacity for each sponsor. Humana, Express Scripts, and Careplus all use the product today.</p>
-        <p class="case-study__p">The 38% number matters because it is the tightest possible validation of the insight. If advocates were genuinely just users of a tool that happened to serve a different workflow, giving them their own product should have moved their metric significantly. It did. The design decision that looked expensive in the short term — building a parallel product rather than extending impersonation — was the decision that changed the operational picture of the whole support operation. The broader lesson is that when operators spend their entire workday inside your product, they are your users too, and the version of the product they need looks nothing like the one the end customer uses.</p>
+        <p class="case-study__p">The Medicare Prescription Payment Plan launched in October 2024 and is now available to 20M+ members (40% of the entire Medicare population) through Humana, Cigna, and Express Scripts.</p>
       </section>
 
-      <div class="case-study__stats">
-        <div class="case-study__stat">
-          <p class="case-study__stat-num">~38%</p>
-          <p class="case-study__stat-desc">Reduction in average advocate call time — the metric advocates are measured on, directly translating to operational capacity for each sponsor.</p>
+      <div class="case-study__numbered case-study__numbered--grid-2">
+        <div class="case-study__numbered-cell">
+          <div class="case-study__numbered-body">
+            <p class="case-study__stat-num">20M+</p>
+            <p class="case-study__numbered-desc">Medicare members reached through Humana, Cigna, and other Part D sponsor partners, ~40% of the Medicare population.</p>
+          </div>
         </div>
-        <div class="case-study__stat">
-          <p class="case-study__stat-num">3</p>
-          <p class="case-study__stat-desc">Medicare Part D sponsors using the product today — Humana, Express Scripts, and Careplus.</p>
+        <div class="case-study__numbered-cell">
+          <div class="case-study__numbered-body">
+            <p class="case-study__stat-num">95%</p>
+            <p class="case-study__numbered-desc">Of members found it easier to use and navigate than other Medicare sites.</p>
+          </div>
+        </div>
+        <div class="case-study__numbered-cell">
+          <div class="case-study__numbered-body">
+            <p class="case-study__stat-num">$25M+</p>
+            <p class="case-study__numbered-desc">In pharmacy claims each month.</p>
+          </div>
+        </div>
+        <div class="case-study__numbered-cell">
+          <div class="case-study__numbered-body">
+            <p class="case-study__stat-num">$4M+</p>
+            <p class="case-study__numbered-desc">Billed each month to members.</p>
+          </div>
         </div>
       </div>
+
+      <figure class="case-study__quote case-study__quote--boxed">
+        <div class="case-study__quote-inner">
+          <blockquote class="case-study__quote-text">"Paytient made it easier to pay for my prescription medications. Due to the high cost, I am able to pick up my prescriptions and pay for them over time on my schedule."</blockquote>
+          <figcaption class="case-study__quote-attr">— Kimberly, research participant</figcaption>
+        </div>
+      </figure>
+
+      <section class="case-study__section">
+        <p class="case-study__p">For a net-new federal program with no playbook, that number meant the product was doing its job.</p>
+      </section>
 
       <nav class="case-study__prevnext" aria-label="Project navigation">
         <a href="mppp-calculator.html">← Monthly Payment Calculator</a>
