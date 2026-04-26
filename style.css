@@ -1026,6 +1026,22 @@ img {
   object-fit: contain;
 }
 
+.case-study__figure-image--tall {
+  aspect-ratio: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--sp-5);
+}
+
+.case-study__figure-image--tall img {
+  width: 70%;
+  height: auto;
+  max-width: 70%;
+  object-fit: contain;
+  display: block;
+}
+
 .case-study__figure-image--variations {
   aspect-ratio: auto;
   display: grid;
