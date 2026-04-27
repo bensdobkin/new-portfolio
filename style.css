@@ -332,15 +332,25 @@ img {
 }
 
 .card__image--logo {
-  background: #fff;
+  background: var(--bg-card);
 }
 
 .card__image--logo img {
   width: auto;
   height: auto;
-  max-width: 28%;
-  max-height: 28%;
+  max-width: 24%;
+  max-height: 24%;
   object-fit: contain;
+}
+
+.card__image--logo img[src*="apple-pay-mark"] {
+  max-width: 24%;
+  max-height: 24%;
+}
+
+.card__image--logo img[src*="apple-music-logo"] {
+  max-width: 40%;
+  max-height: 40%;
 }
 
 .card__image--contain img {
@@ -718,6 +728,16 @@ img {
   object-fit: contain;
 }
 
+.case-study__hero--contain img[src*="apple-music-logo"] {
+  max-width: 20%;
+  max-height: 60%;
+}
+
+.case-study__hero--contain img[src*="apple-pay-mark"] {
+  max-width: 12%;
+  max-height: 60%;
+}
+
 .case-study__section {
   padding: 0 120px;
   display: flex;
@@ -1061,6 +1081,20 @@ img {
   width: 70%;
   height: auto;
   max-width: 70%;
+  object-fit: contain;
+  display: block;
+}
+
+.case-study__figure-image--bare {
+  aspect-ratio: auto;
+  background: transparent;
+  padding: 0;
+}
+
+.case-study__figure-image--bare img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
   object-fit: contain;
   display: block;
 }
