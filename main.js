@@ -29,6 +29,105 @@
     });
   }
 
+  function initPlaygroundCanvas() {
+    var viewport = document.getElementById('playground');
+    if (!viewport) return;
+    var canvas = viewport.querySelector('.playground__canvas');
+    if (!canvas) return;
+
+    var x = 0, y = 0;
+    var dragging = false;
+    var pointerId = null;
+    var startX = 0, startY = 0, baseX = 0, baseY = 0;
+    var movedDist = 0;
+    var DRAG_THRESHOLD = 5;
+
+    function applyTransform() {
+      canvas.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
+    }
+
+    function center() {
+      var items = canvas.querySelectorAll('.playground__item');
+      if (!items.length) return;
+      var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+      items.forEach(function (item) {
+        var ix = parseFloat(getComputedStyle(item).getPropertyValue('--x')) || 0;
+        var iy = parseFloat(getComputedStyle(item).getPropertyValue('--y')) || 0;
+        var iw = parseFloat(getComputedStyle(item).getPropertyValue('--w')) || item.offsetWidth;
+        var ih = parseFloat(getComputedStyle(item).getPropertyValue('--h')) || item.offsetHeight;
+        if (ix < minX) minX = ix;
+        if (iy < minY) minY = iy;
+        if (ix + iw > maxX) maxX = ix + iw;
+        if (iy + ih > maxY) maxY = iy + ih;
+      });
+      var rect = viewport.getBoundingClientRect();
+      x = rect.width / 2 - (minX + maxX) / 2;
+      y = rect.height / 2 - (minY + maxY) / 2;
+      applyTransform();
+    }
+
+    viewport.addEventListener('pointerdown', function (e) {
+      if (e.button !== undefined && e.button !== 0) return;
+      dragging = true;
+      pointerId = e.pointerId;
+      movedDist = 0;
+      startX = e.clientX;
+      startY = e.clientY;
+      baseX = x;
+      baseY = y;
+      viewport.classList.add('is-dragging');
+      try { viewport.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+
+    viewport.addEventListener('pointermove', function (e) {
+      if (!dragging || e.pointerId !== pointerId) return;
+      var dx = e.clientX - startX;
+      var dy = e.clientY - startY;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist > movedDist) movedDist = dist;
+      x = baseX + dx;
+      y = baseY + dy;
+      applyTransform();
+    });
+
+    function endDrag(e) {
+      if (!dragging) return;
+      if (e && e.pointerId !== pointerId) return;
+      dragging = false;
+      pointerId = null;
+      viewport.classList.remove('is-dragging');
+    }
+
+    viewport.addEventListener('pointerup', endDrag);
+    viewport.addEventListener('pointercancel', endDrag);
+    viewport.addEventListener('lostpointercapture', endDrag);
+
+    viewport.addEventListener('wheel', function (e) {
+      e.preventDefault();
+      x -= e.deltaX;
+      y -= e.deltaY;
+      applyTransform();
+    }, { passive: false });
+
+    viewport.addEventListener('click', function (e) {
+      if (movedDist > DRAG_THRESHOLD) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    }, true);
+
+    viewport.addEventListener('dragstart', function (e) {
+      e.preventDefault();
+    });
+
+    if (document.readyState === 'complete') {
+      center();
+    } else {
+      window.addEventListener('load', center);
+    }
+    window.addEventListener('resize', center);
+  }
+
   function initLightbox() {
     var gallery = document.getElementById('playground');
     if (!gallery) return;
@@ -241,6 +340,7 @@
 
   function init() {
     setActiveNav();
+    initPlaygroundCanvas();
     initLightbox();
     initCaseStudyTOC();
     initThemeToggle();
