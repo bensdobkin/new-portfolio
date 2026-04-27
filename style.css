@@ -348,9 +348,14 @@ img {
   max-height: 24%;
 }
 
+.card__image--logo:has(img[src*="apple-music-logo"]) {
+  background: #fb233b;
+}
+
 .card__image--logo img[src*="apple-music-logo"] {
   max-width: 40%;
   max-height: 40%;
+  filter: brightness(0) invert(1);
 }
 
 .card__image--contain img {
@@ -728,9 +733,14 @@ img {
   object-fit: contain;
 }
 
+.case-study__hero--contain:has(img[src*="apple-music-logo"]) {
+  background: #fb233b;
+}
+
 .case-study__hero--contain img[src*="apple-music-logo"] {
   max-width: 20%;
   max-height: 60%;
+  filter: brightness(0) invert(1);
 }
 
 .case-study__hero--contain img[src*="apple-pay-mark"] {
