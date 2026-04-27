@@ -295,7 +295,7 @@ img {
 .card {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-3);
+  gap: var(--sp-2);
   text-decoration: none;
   color: inherit;
 }
@@ -374,7 +374,7 @@ img {
 .card__meta {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-1);
+  gap: 2px;
   width: 100%;
 }
 
@@ -387,10 +387,10 @@ img {
 }
 
 .card__title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--text-1);
-  letter-spacing: -0.48px;
+  letter-spacing: -0.4px;
   margin: 0;
 }
 
@@ -413,10 +413,10 @@ img {
 }
 
 .card__desc {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 300;
   color: var(--text-2);
-  letter-spacing: -0.4px;
+  letter-spacing: -0.32px;
   margin: 0;
 }
 
