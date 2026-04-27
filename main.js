@@ -41,14 +41,32 @@
     var startX = 0, startY = 0, baseX = 0, baseY = 0;
     var movedDist = 0;
     var DRAG_THRESHOLD = 5;
+    var worldW = 0, worldH = 0;
+    var tilingInitialized = false;
+    var TILE_PADDING = 80;
 
-    function applyTransform() {
-      canvas.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
+    function wrap(v, period) {
+      if (!period || period <= 0) return v;
+      var r = v % period;
+      if (r > 0) r -= period;
+      return r;
     }
 
-    function center() {
-      var items = canvas.querySelectorAll('.playground__item');
-      if (!items.length) return;
+    function applyTransform() {
+      var wx = wrap(x, worldW);
+      var wy = wrap(y, worldH);
+      canvas.style.transform = 'translate3d(' + wx + 'px, ' + wy + 'px, 0)';
+      viewport.style.setProperty('--bg-x', wx + 'px');
+      viewport.style.setProperty('--bg-y', wy + 'px');
+    }
+
+    function originalTiles() {
+      return canvas.querySelectorAll('.playground__tile:not([data-clone])');
+    }
+
+    function measureWorld() {
+      var items = originalTiles();
+      if (!items.length) return null;
       var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
       items.forEach(function (item) {
         var ix = parseFloat(getComputedStyle(item).getPropertyValue('--x')) || 0;
@@ -60,9 +78,41 @@
         if (ix + iw > maxX) maxX = ix + iw;
         if (iy + ih > maxY) maxY = iy + ih;
       });
+      return { minX: minX, minY: minY, maxX: maxX, maxY: maxY };
+    }
+
+    function setupInfiniteTiling() {
+      if (tilingInitialized) return;
+      var bounds = measureWorld();
+      if (!bounds) return;
+      worldW = (bounds.maxX - bounds.minX) + TILE_PADDING;
+      worldH = (bounds.maxY - bounds.minY) + TILE_PADDING;
+      if (worldW <= 0 || worldH <= 0) return;
+      var tiles = Array.prototype.slice.call(originalTiles());
+      for (var dx = -1; dx <= 1; dx++) {
+        for (var dy = -1; dy <= 1; dy++) {
+          if (dx === 0 && dy === 0) continue;
+          tiles.forEach(function (t) {
+            var ix = parseFloat(getComputedStyle(t).getPropertyValue('--x')) || 0;
+            var iy = parseFloat(getComputedStyle(t).getPropertyValue('--y')) || 0;
+            var clone = t.cloneNode(true);
+            clone.setAttribute('data-clone', 'true');
+            clone.setAttribute('aria-hidden', 'true');
+            clone.style.setProperty('--x', (ix + dx * worldW) + 'px');
+            clone.style.setProperty('--y', (iy + dy * worldH) + 'px');
+            canvas.appendChild(clone);
+          });
+        }
+      }
+      tilingInitialized = true;
+    }
+
+    function center() {
+      var bounds = measureWorld();
+      if (!bounds) return;
       var rect = viewport.getBoundingClientRect();
-      x = rect.width / 2 - (minX + maxX) / 2;
-      y = rect.height / 2 - (minY + maxY) / 2;
+      x = rect.width / 2 - (bounds.minX + bounds.maxX) / 2;
+      y = rect.height / 2 - (bounds.minY + bounds.maxY) / 2;
       applyTransform();
     }
 
@@ -120,10 +170,15 @@
       e.preventDefault();
     });
 
-    if (document.readyState === 'complete') {
+    function setup() {
+      setupInfiniteTiling();
       center();
+    }
+
+    if (document.readyState === 'complete') {
+      setup();
     } else {
-      window.addEventListener('load', center);
+      window.addEventListener('load', setup);
     }
     window.addEventListener('resize', center);
   }

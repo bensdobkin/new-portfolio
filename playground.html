@@ -25,14 +25,38 @@
   <main>
     <section class="playground" id="playground" aria-label="Visual playground">
       <div class="playground__canvas">
-        <button type="button" class="playground__item" data-index="0" data-src="assets/images/img-p1.jpg" aria-label="Open image 1" style="--x:160px;--y:240px;--w:380px;--h:253px;--r:-2deg;"><img src="assets/images/img-p1.jpg" alt="Glossy green leaves of a tropical houseplant in a sunlit greenhouse, with blurred pink and yellow blooms in the background" /></button>
-        <button type="button" class="playground__item" data-index="1" data-src="assets/images/img-p2.jpg" aria-label="Open image 2" style="--x:700px;--y:120px;--w:300px;--h:200px;--r:1.5deg;"><img src="assets/images/img-p2.jpg" alt="Cluster of pale purple daisies with yellow centers, photographed close-up against a soft red and green background" /></button>
-        <button type="button" class="playground__item" data-index="2" data-src="assets/images/img-p3.jpg" aria-label="Open image 3" style="--x:1100px;--y:380px;--w:440px;--h:293px;--r:-1deg;"><img src="assets/images/img-p3.jpg" alt="Greenhouse pathway lined with stalks of pale pink veltheimia flowers, magenta azaleas, and lush ferns under a glass roof" /></button>
-        <button type="button" class="playground__item" data-index="3" data-src="assets/images/img-p4.jpg" aria-label="Open image 4" style="--x:1700px;--y:200px;--w:320px;--h:213px;--r:2deg;"><img src="assets/images/img-p4.jpg" alt="A vine of small berries ripening from green to orange to red, hanging in soft greenhouse light with bokeh foliage behind" /></button>
-        <button type="button" class="playground__item" data-index="4" data-src="assets/images/img-p5.jpg" aria-label="Open image 5" style="--x:240px;--y:720px;--w:320px;--h:213px;--r:1deg;"><img src="assets/images/img-p5.jpg" alt="Black-and-white close-up of pine tree branches with bristly needles silhouetted against a clear sky" /></button>
-        <button type="button" class="playground__item" data-index="5" data-src="assets/images/img-p6.jpg" aria-label="Open image 6" style="--x:720px;--y:600px;--w:380px;--h:253px;--r:-2deg;"><img src="assets/images/img-p6.jpg" alt="Black-and-white shallow-focus shot of low scrub plants and stones along a windswept ridgeline under an overcast sky" /></button>
-        <button type="button" class="playground__item" data-index="6" data-src="assets/images/img-p7.jpg" aria-label="Open image 7" style="--x:1180px;--y:820px;--w:400px;--h:267px;--r:1.5deg;"><img src="assets/images/img-p7.jpg" alt="Black-and-white abstract close-up of dappled tree foliage with overlapping leaves dissolving into soft, dreamy bokeh" /></button>
-        <button type="button" class="playground__item" data-index="7" data-src="assets/images/img-p8.jpg" aria-label="Open image 8" style="--x:1780px;--y:720px;--w:340px;--h:227px;--r:-1deg;"><img src="assets/images/img-p8.jpg" alt="Black-and-white photo of the textured, peaked crown of an evergreen tree rising into a pale, even sky" /></button>
+        <div class="playground__tile" style="--x:160px;--y:240px;--w:380px;--h:253px;--r:-2deg;">
+          <button type="button" class="playground__item" data-index="0" data-src="assets/images/img-p1.jpg" aria-label="Open image 1"><img src="assets/images/img-p1.jpg" alt="Glossy green leaves of a tropical houseplant in a sunlit greenhouse, with blurred pink and yellow blooms in the background" /></button>
+          <p class="playground__caption">Hothouse leaves</p>
+        </div>
+        <div class="playground__tile" style="--x:700px;--y:120px;--w:300px;--h:200px;--r:1.5deg;">
+          <button type="button" class="playground__item" data-index="1" data-src="assets/images/img-p2.jpg" aria-label="Open image 2"><img src="assets/images/img-p2.jpg" alt="Cluster of pale purple daisies with yellow centers, photographed close-up against a soft red and green background" /></button>
+          <p class="playground__caption">Pale asters</p>
+        </div>
+        <div class="playground__tile" style="--x:1100px;--y:380px;--w:440px;--h:293px;--r:-1deg;">
+          <button type="button" class="playground__item" data-index="2" data-src="assets/images/img-p3.jpg" aria-label="Open image 3"><img src="assets/images/img-p3.jpg" alt="Greenhouse pathway lined with stalks of pale pink veltheimia flowers, magenta azaleas, and lush ferns under a glass roof" /></button>
+          <p class="playground__caption">Conservatory path</p>
+        </div>
+        <div class="playground__tile" style="--x:1700px;--y:200px;--w:320px;--h:213px;--r:2deg;">
+          <button type="button" class="playground__item" data-index="3" data-src="assets/images/img-p4.jpg" aria-label="Open image 4"><img src="assets/images/img-p4.jpg" alt="A vine of small berries ripening from green to orange to red, hanging in soft greenhouse light with bokeh foliage behind" /></button>
+          <p class="playground__caption">Wild berries</p>
+        </div>
+        <div class="playground__tile" style="--x:240px;--y:720px;--w:320px;--h:213px;--r:1deg;">
+          <button type="button" class="playground__item" data-index="4" data-src="assets/images/img-p5.jpg" aria-label="Open image 5"><img src="assets/images/img-p5.jpg" alt="Black-and-white close-up of pine tree branches with bristly needles silhouetted against a clear sky" /></button>
+          <p class="playground__caption">Pine needles</p>
+        </div>
+        <div class="playground__tile" style="--x:720px;--y:600px;--w:380px;--h:253px;--r:-2deg;">
+          <button type="button" class="playground__item" data-index="5" data-src="assets/images/img-p6.jpg" aria-label="Open image 6"><img src="assets/images/img-p6.jpg" alt="Black-and-white shallow-focus shot of low scrub plants and stones along a windswept ridgeline under an overcast sky" /></button>
+          <p class="playground__caption">Ridgeline scrub</p>
+        </div>
+        <div class="playground__tile" style="--x:1180px;--y:820px;--w:400px;--h:267px;--r:1.5deg;">
+          <button type="button" class="playground__item" data-index="6" data-src="assets/images/img-p7.jpg" aria-label="Open image 7"><img src="assets/images/img-p7.jpg" alt="Black-and-white abstract close-up of dappled tree foliage with overlapping leaves dissolving into soft, dreamy bokeh" /></button>
+          <p class="playground__caption">Canopy</p>
+        </div>
+        <div class="playground__tile" style="--x:1780px;--y:720px;--w:340px;--h:227px;--r:-1deg;">
+          <button type="button" class="playground__item" data-index="7" data-src="assets/images/img-p8.jpg" aria-label="Open image 8"><img src="assets/images/img-p8.jpg" alt="Black-and-white photo of the textured, peaked crown of an evergreen tree rising into a pale, even sky" /></button>
+          <p class="playground__caption">Evergreen</p>
+        </div>
       </div>
       <div class="playground__hint" aria-hidden="true">Drag or scroll to move</div>
     </section>
