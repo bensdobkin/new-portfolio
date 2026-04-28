@@ -398,8 +398,68 @@
     }
   }
 
+  function initMobileNav() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    var links = nav.querySelector('.site-nav__links');
+    if (!links) return;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'site-nav__hamburger';
+    btn.setAttribute('aria-label', 'Toggle menu');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML = '<span></span><span></span><span></span>';
+    nav.appendChild(btn);
+
+    var overlay = document.createElement('div');
+    overlay.className = 'site-nav__overlay';
+    overlay.setAttribute('aria-hidden', 'true');
+    Array.prototype.forEach.call(links.querySelectorAll('.site-nav__link'), function (link) {
+      var a = document.createElement('a');
+      a.href = link.getAttribute('href') || '#';
+      a.className = 'site-nav__overlay-link';
+      if (link.classList.contains('active')) a.classList.add('active');
+      var page = link.getAttribute('data-page');
+      if (page) a.setAttribute('data-page', page);
+      a.textContent = link.textContent;
+      overlay.appendChild(a);
+    });
+    document.body.appendChild(overlay);
+
+    function open() {
+      overlay.classList.add('is-open');
+      btn.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      overlay.classList.remove('is-open');
+      btn.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    function toggle() {
+      if (overlay.classList.contains('is-open')) close(); else open();
+    }
+
+    btn.addEventListener('click', toggle);
+    overlay.addEventListener('click', function (e) {
+      if (e.target.classList && e.target.classList.contains('site-nav__overlay-link')) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900 && overlay.classList.contains('is-open')) close();
+    });
+  }
+
   function init() {
     setActiveNav();
+    initMobileNav();
     initPlaygroundCanvas();
     initLightbox();
     initCaseStudyTOC();
