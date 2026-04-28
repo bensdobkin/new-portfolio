@@ -96,6 +96,11 @@ img {
   display: flex;
   gap: var(--sp-2);
   align-items: center;
+  padding: 6px 12px;
+  margin: -6px -12px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  transition: border-color 120ms ease;
 }
 
 .site-nav__brand-name {
@@ -105,6 +110,10 @@ img {
 .site-nav__brand-role {
   color: var(--text-2);
   transition: color 120ms ease;
+}
+
+.site-nav__brand:hover {
+  border-color: var(--border);
 }
 
 .site-nav__brand:hover .site-nav__brand-role {
@@ -120,12 +129,14 @@ img {
 .site-nav__link {
   color: var(--text-2);
   padding: 6px 12px;
+  border: 1px solid transparent;
   border-radius: var(--radius);
-  transition: color 120ms ease, background-color 120ms ease;
+  transition: color 120ms ease, background-color 120ms ease, border-color 120ms ease;
 }
 
 .site-nav__link:hover {
   color: var(--text-1);
+  border-color: var(--border);
 }
 
 .site-nav__link.active {
@@ -434,7 +445,7 @@ img {
 }
 
 .badge-coming-soon {
-  background: var(--accent);
+  background: var(--highlight-purple);
   color: var(--white);
   font-family: var(--font-mono);
   font-size: 12px;

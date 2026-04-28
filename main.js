@@ -111,8 +111,8 @@
       var bounds = measureWorld();
       if (!bounds) return;
       var rect = viewport.getBoundingClientRect();
-      x = rect.width / 2 - (bounds.minX + bounds.maxX) / 2;
-      y = rect.height / 2 - (bounds.minY + bounds.maxY) / 2;
+      x = rect.width / 2 - 935;
+      y = rect.height / 2 - 242;
       applyTransform();
     }
 
