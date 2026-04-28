@@ -1956,3 +1956,146 @@ html[data-theme="dark"] .about__box-label {
     height: 280px;
   }
 }
+
+/* ---------- Password gate ---------- */
+html[data-locked="1"] {
+  overflow: hidden;
+}
+
+html[data-locked="1"] body > main {
+  display: none !important;
+}
+
+.password-gate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-5);
+  min-height: calc(100vh - var(--nav-h) * 2);
+}
+
+.password-gate__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-3);
+}
+
+.password-gate__title {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -1.28px;
+  color: var(--text-1);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.password-gate__desc {
+  font-size: 15px;
+  line-height: 1.55;
+  letter-spacing: -0.3px;
+  color: var(--text-2);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.password-gate__form {
+  width: 100%;
+  max-width: 420px;
+  margin-top: var(--sp-2);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 4px 4px 4px 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: border-color 120ms ease;
+}
+
+.password-gate__form:focus-within {
+  border-color: var(--text-1);
+}
+
+.password-gate__input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: -0.28px;
+  color: var(--text-1);
+}
+
+.password-gate__input::placeholder {
+  color: var(--text-2);
+  opacity: 1;
+}
+
+.password-gate__submit {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--text-1);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 120ms ease, transform 120ms ease, opacity 120ms ease;
+}
+
+.password-gate__submit:hover {
+  background: var(--highlight-purple);
+}
+
+.password-gate__submit:active {
+  transform: scale(0.96);
+}
+
+.password-gate__submit:disabled {
+  opacity: 0.5;
+  cursor: default;
+  transform: none;
+}
+
+.password-gate__submit svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.password-gate__error {
+  min-height: 1em;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  color: var(--accent);
+}
+
+html[data-theme="dark"] .password-gate__form {
+  background: #222222;
+}
+
+html[data-theme="dark"] .password-gate__submit {
+  background: var(--text-1);
+  color: #1a1a1a;
+}
+
+html[data-theme="dark"] .password-gate__submit:hover {
+  background: var(--highlight-purple);
+  color: var(--white);
+}
+

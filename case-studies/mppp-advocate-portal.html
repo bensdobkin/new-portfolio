@@ -7,6 +7,8 @@
   <meta name="description" content="Ben Dobkin designed a standalone customer rep portal for customer service teams supporting the Medicare Prescription Payment Plan — reducing average call time by 8% and replacing an impersonation-based workflow across Humana, Express Scripts, and Careplus." />
   <link rel="stylesheet" href="../style.css" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+  <script>(function(){try{if(sessionStorage.getItem('paytientGateAuthed')!=='1')document.documentElement.setAttribute('data-locked','1');}catch(e){document.documentElement.setAttribute('data-locked','1');}})();</script>
+  <script src="../gate.js"></script>
 </head>
 <body>
   <nav class="site-nav">
