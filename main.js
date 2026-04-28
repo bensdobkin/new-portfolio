@@ -298,11 +298,16 @@
     links.forEach(function (link) {
       link.addEventListener('click', function (e) {
         var href = link.getAttribute('href') || '';
-        if (href === '#overview') {
-          e.preventDefault();
+        var id = href.replace(/^#/, '');
+        e.preventDefault();
+        if (id === 'overview' || !id) {
           window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          var target = document.getElementById(id);
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        setActive(href.replace(/^#/, ''));
+        if (history.replaceState) history.replaceState(null, '', href);
+        setActive(id);
         suppressObserver = true;
         clearTimeout(releaseTimer);
         releaseTimer = setTimeout(function () {
