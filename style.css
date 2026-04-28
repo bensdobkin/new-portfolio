@@ -332,6 +332,23 @@ img {
   overflow: hidden;
 }
 
+main:not(.other-work) .card__image {
+  background: #C8CCCD;
+  border-color: #F0F0F0;
+}
+
+.card__image {
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.card__image img {
+  transition: transform 200ms ease;
+}
+
+a.card:hover .card__image img {
+  transform: scale(1.015);
+}
+
 .other-work .card__image {
   border: none;
 }
@@ -370,6 +387,10 @@ img {
   max-height: 40%;
   filter: brightness(0) invert(1);
   transform: translateY(9%);
+}
+
+a.card:hover .card__image img[src*="apple-pay-logo"] {
+  transform: translateY(9%) scale(1.015);
 }
 
 .card__image--logo:has(img[src*="apple-music-logo"]) {
@@ -433,7 +454,6 @@ img {
 @media (hover: hover) and (pointer: fine) {
   a.card:hover .card__arrow {
     color: var(--text-1);
-    transform: translateX(2px);
   }
 }
 
@@ -904,6 +924,13 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.case-study__hero:has(img[src*="mppp-"]),
+.case-study__hero:has(img[src*="toyota-maintenance-plans-"]),
+.case-study__hero:has(img[src*="toyota-safety-hub-"]) {
+  background: #C8CCCD;
+  border-bottom-color: #F0F0F0;
 }
 
 .case-study__hero img {
@@ -1706,6 +1733,18 @@ html[data-theme="dark"] .case-study__compare-header {
 html[data-theme="dark"] .case-study__numbered-cell,
 html[data-theme="dark"] .case-study__compare-cell {
   background: #1a1a1a;
+}
+
+html[data-theme="dark"] main:not(.other-work) .card__image {
+  background: var(--bg-card);
+  border-color: #2a2a2a;
+}
+
+html[data-theme="dark"] .case-study__hero:has(img[src*="mppp-"]),
+html[data-theme="dark"] .case-study__hero:has(img[src*="toyota-maintenance-plans-"]),
+html[data-theme="dark"] .case-study__hero:has(img[src*="toyota-safety-hub-"]) {
+  background: var(--bg-card);
+  border-bottom-color: #2a2a2a;
 }
 
 body,
