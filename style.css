@@ -334,7 +334,82 @@ img {
 
 main:not(.other-work) .card__image {
   background: #C8CCCD;
-  border-color: #F0F0F0;
+  border-color: var(--border);
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-summary"]),
+main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"]),
+main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"]),
+main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"]),
+main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"]),
+main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"]) {
+  position: relative;
+  background: transparent;
+  border-color: var(--border);
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-summary"])::before,
+main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"])::before,
+main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"])::before,
+main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"])::before,
+main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"])::before,
+main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"])::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)), var(--card-bg);
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-summary"])::before {
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, 200%;
+  background-position: center, 30% 40%;
+}
+
+main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"])::before {
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, 220%;
+  background-position: center, 15% 25%;
+  transform: scaleX(-1);
+}
+
+main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"])::before {
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, 140%;
+  background-position: center, 75% 65%;
+  transform: rotate(180deg);
+}
+
+main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"])::before {
+  --card-bg: url("assets/images/card-gradient-2.jpg");
+  background-size: auto, 180%;
+  background-position: center, 35% 60%;
+}
+
+main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"])::before {
+  --card-bg: url("assets/images/card-gradient-2.jpg");
+  background-size: auto, 155%;
+  background-position: center, 80% 80%;
+  transform: scaleX(-1);
+}
+
+main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"])::before {
+  --card-bg: url("assets/images/card-gradient-2.jpg");
+  background-size: auto, 220%;
+  background-position: center, 25% 15%;
+  transform: rotate(180deg);
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-summary"]) img,
+main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"]) img,
+main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"]) img,
+main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"]) img,
+main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"]) img,
+main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"]) img {
+  position: relative;
+  z-index: 1;
 }
 
 .card__image {
@@ -929,8 +1004,61 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
 .case-study__hero:has(img[src*="mppp-"]),
 .case-study__hero:has(img[src*="toyota-maintenance-plans-"]),
 .case-study__hero:has(img[src*="toyota-safety-hub-"]) {
-  background: #C8CCCD;
-  border-bottom-color: #F0F0F0;
+  position: relative;
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+.case-study__hero:has(img[src*="mppp-"])::before,
+.case-study__hero:has(img[src*="toyota-maintenance-plans-"])::before,
+.case-study__hero:has(img[src*="toyota-safety-hub-"])::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)), var(--card-bg);
+}
+
+.case-study__hero:has(img[src*="mppp-calculator-hero"])::before {
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, 200%;
+  background-position: center, 15% 25%;
+  transform: scaleX(-1);
+}
+
+.case-study__hero:has(img[src*="toyota-maintenance-plans-hero"])::before {
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, 140%;
+  background-position: center, 75% 65%;
+  transform: rotate(180deg);
+}
+
+.case-study__hero:has(img[src*="mppp-member-portal-hero"])::before {
+  --card-bg: url("assets/images/card-gradient-2.jpg");
+  background-size: auto, 160%;
+  background-position: center, 35% 60%;
+}
+
+.case-study__hero:has(img[src*="mppp-advocate-portal-hero"])::before {
+  --card-bg: url("assets/images/card-gradient-2.jpg");
+  background-size: auto, 145%;
+  background-position: center, 80% 80%;
+  transform: scaleX(-1);
+}
+
+.case-study__hero:has(img[src*="toyota-safety-hub-hero"])::before {
+  --card-bg: url("assets/images/card-gradient-2.jpg");
+  background-size: auto, 200%;
+  background-position: center, 25% 15%;
+  transform: rotate(180deg);
+}
+
+.case-study__hero:has(img[src*="mppp-"]) img,
+.case-study__hero:has(img[src*="toyota-maintenance-plans-"]) img,
+.case-study__hero:has(img[src*="toyota-safety-hub-"]) img {
+  position: relative;
+  z-index: 1;
 }
 
 .case-study__hero img {
