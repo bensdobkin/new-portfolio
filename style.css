@@ -384,8 +384,9 @@ main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"]
 
 main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"])::before {
   --card-bg: url("assets/images/card-gradient-2.jpg");
-  background-size: auto, 180%;
+  background-size: auto, 220%;
   background-position: center, 35% 60%;
+  transform: scaleY(-1);
 }
 
 main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"])::before {
@@ -1036,8 +1037,9 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
 
 .case-study__hero:has(img[src*="mppp-member-portal-hero"])::before {
   --card-bg: url("assets/images/card-gradient-2.jpg");
-  background-size: auto, 160%;
+  background-size: auto, 200%;
   background-position: center, 35% 60%;
+  transform: scaleY(-1);
 }
 
 .case-study__hero:has(img[src*="mppp-advocate-portal-hero"])::before {
