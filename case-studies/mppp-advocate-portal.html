@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Customer Rep Portal for MPPP — Case study</title>
   <meta name="description" content="Ben Dobkin designed a standalone customer rep portal for customer service teams supporting the Medicare Prescription Payment Plan — reducing average call time by 8% and replacing an impersonation-based workflow across Humana, Express Scripts, and Careplus." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="stylesheet" href="../style.css" />
   <script>(function(){try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
   <script>(function(){try{if(sessionStorage.getItem('paytientGateAuthed')!=='1')document.documentElement.setAttribute('data-locked','1');}catch(e){document.documentElement.setAttribute('data-locked','1');}})();</script>
@@ -39,7 +40,10 @@
 
     <article class="case-study__main">
       <div class="case-study__hero" id="overview" aria-hidden="true" style="--vt-name: vt-mppp-advocate-portal">
-        <img src="../assets/images/mppp-advocate-portal-hero.png" alt="Humana-branded internal CRM for customer reps on the Eligibility tab for Jane Doe, showing Medicare Prescription Payment Plan Eligibility marked Eligible with Part D dates and contract identifiers, Participation Details with an Opt In status and confirmation number, and a Participation Log table with Opt In activity." />
+        <picture>
+          <source media="(max-width: 900px)" srcset="../assets/images/mppp-advocate-portal-card.png" />
+          <img src="../assets/images/mppp-advocate-portal-hero.png" alt="Humana-branded internal CRM for customer reps on the Eligibility tab for Jane Doe, showing Medicare Prescription Payment Plan Eligibility marked Eligible with Part D dates and contract identifiers, Participation Details with an Opt In status and confirmation number, and a Participation Log table with Opt In activity." />
+        </picture>
       </div>
 
       <header class="case-study__section">

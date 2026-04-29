@@ -295,10 +295,11 @@ img {
   font-weight: 100;
   letter-spacing: -1.44px;
   font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  max-width: none;
 }
 
 .hero--serif .hero__headline .hl {
-  color: var(--highlight-purple);
+  color: var(--text-1);
 }
 
 /* ---------- Card grid ---------- */
@@ -360,47 +361,48 @@ main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"])::befo
   inset: 0;
   z-index: 0;
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)), var(--card-bg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--card-bg);
 }
 
 main:not(.other-work) .card__image:has(img[src*="hubspot-summary"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
-  background-size: auto, 200%;
-  background-position: center, 30% 40%;
-}
-
-main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
-  background-size: auto, 220%;
-  background-position: center, 15% 25%;
-  transform: scaleX(-1);
-}
-
-main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
-  background-size: auto, 140%;
-  background-position: center, 75% 65%;
-  transform: rotate(180deg);
-}
-
-main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"])::before {
   --card-bg: url("assets/images/card-gradient-2.jpg");
   background-size: auto, 220%;
   background-position: center, 35% 60%;
   transform: scaleY(-1);
 }
 
-main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"])::before {
+main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"])::before {
   --card-bg: url("assets/images/card-gradient-2.jpg");
   background-size: auto, 155%;
   background-position: center, 80% 80%;
   transform: scaleX(-1);
 }
 
-main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"])::before {
+main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"])::before {
   --card-bg: url("assets/images/card-gradient-2.jpg");
   background-size: auto, 220%;
   background-position: center, 25% 15%;
+  transform: rotate(180deg);
+}
+
+main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"])::before {
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, 200%;
+  background-position: center, 30% 40%;
+  transform: scaleX(-1);
+}
+
+main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"])::before {
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, 220%;
+  background-position: center, 15% 25%;
+  transform: scaleX(-1);
+}
+
+main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"])::before {
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, 140%;
+  background-position: center, 75% 65%;
   transform: rotate(180deg);
 }
 
@@ -1019,41 +1021,40 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
   inset: 0;
   z-index: 0;
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)), var(--card-bg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--card-bg);
 }
 
 .case-study__hero:has(img[src*="mppp-calculator-hero"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
-  background-size: auto, 200%;
-  background-position: center, 15% 25%;
+  --card-bg: url("assets/images/card-gradient-2.jpg");
+  background-size: auto, cover;
+  background-position: center, center top;
   transform: scaleX(-1);
 }
 
 .case-study__hero:has(img[src*="toyota-maintenance-plans-hero"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
-  background-size: auto, 140%;
-  background-position: center, 75% 65%;
+  --card-bg: url("assets/images/card-gradient-2.jpg");
+  background-size: auto, cover;
+  background-position: center, center 30%;
   transform: rotate(180deg);
 }
 
 .case-study__hero:has(img[src*="mppp-member-portal-hero"])::before {
-  --card-bg: url("assets/images/card-gradient-2.jpg");
-  background-size: auto, 200%;
-  background-position: center, 35% 60%;
-  transform: scaleY(-1);
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, cover;
+  background-position: center, center top;
 }
 
 .case-study__hero:has(img[src*="mppp-advocate-portal-hero"])::before {
-  --card-bg: url("assets/images/card-gradient-2.jpg");
-  background-size: auto, 145%;
-  background-position: center, 80% 80%;
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, cover;
+  background-position: center, center 70%;
   transform: scaleX(-1);
 }
 
 .case-study__hero:has(img[src*="toyota-safety-hub-hero"])::before {
-  --card-bg: url("assets/images/card-gradient-2.jpg");
-  background-size: auto, 200%;
-  background-position: center, 25% 15%;
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, cover;
+  background-position: center, center bottom;
   transform: rotate(180deg);
 }
 
@@ -2051,6 +2052,12 @@ html[data-theme="dark"] .site-nav__overlay {
     letter-spacing: -1.28px;
   }
 
+  .hero--serif .hero__headline {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -1.6px;
+  }
+
   .hero__subline {
     font-size: 18px;
     letter-spacing: -0.36px;
@@ -2111,6 +2118,17 @@ html[data-theme="dark"] .site-nav__overlay {
   .case-study__hero {
     aspect-ratio: 4 / 3;
     height: auto;
+  }
+
+  .case-study__hero--contain img[src*="apple-music-logo"] {
+    max-width: 40%;
+    max-height: 40%;
+  }
+
+  .case-study__hero--contain img[src*="apple-pay-logo"] {
+    width: 30%;
+    max-width: 30%;
+    max-height: 40%;
   }
 
   .case-study__section,
