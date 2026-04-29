@@ -493,6 +493,7 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
 .card__image--contain img[src*="hubspot-summary"] {
   max-width: 80%;
   max-height: 80%;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.12));
 }
 
 .card__meta {
