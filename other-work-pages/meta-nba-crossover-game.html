@@ -6,7 +6,7 @@
   <title>Meta NBA Crossover Game — Other work</title>
   <meta name="description" content="Created an interactive, gamified experience for Meta Quest in the Meta booth." />
   <link rel="stylesheet" href="../style.css" />
-  <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+  <script>(function(){try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 </head>
 <body>
   <nav class="site-nav">
@@ -31,7 +31,7 @@
     </aside>
 
     <article class="case-study__main">
-      <div class="case-study__hero" id="overview">
+      <div class="case-study__hero" id="overview" style="--vt-name: vt-meta-nba">
         <img src="../assets/images/meta-nba.webp" alt="Meta NBA Crossover Game — person wearing a Meta VR headset and holding controllers against a purple gradient background" />
       </div>
 

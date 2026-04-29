@@ -6,7 +6,7 @@
   <title>Microsoft Holiday Window Display — Other work</title>
   <meta name="description" content="Animations for the holiday window display across Microsoft stores in Sydney, London, and New York City." />
   <link rel="stylesheet" href="../style.css" />
-  <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+  <script>(function(){try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 </head>
 <body>
   <nav class="site-nav">
@@ -31,7 +31,7 @@
     </aside>
 
     <article class="case-study__main">
-      <div class="case-study__hero" id="overview">
+      <div class="case-study__hero" id="overview" style="--vt-name: vt-microsoft-holiday">
         <img src="../assets/images/microsoft-holiday.jpg" alt="Microsoft holiday window display — customers taking a selfie in front of a llama holiday character installation in a Microsoft store" />
       </div>
 

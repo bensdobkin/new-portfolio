@@ -45,7 +45,7 @@ Defined as CSS custom properties in `:root` in `style.css`:
 ## Dark mode
 
 - Activated by `data-theme="dark"` on the `<html>` element.
-- Each page has an inline `<script>` in `<head>` that reads `localStorage.theme` (or `prefers-color-scheme`) and sets the attribute *before* CSS loads — this prevents FOUC.
+- Each page has an inline `<script>` in `<head>` that reads `localStorage.theme` and sets the attribute *before* CSS loads — this prevents FOUC. The site defaults to light mode regardless of the OS `prefers-color-scheme` setting; dark mode is opt-in via the toggle.
 - Footer button (`.theme-toggle`) in every page toggles it via `main.js`.
 - Dark-mode overrides live under `html[data-theme="dark"] { ... }` blocks at the bottom of `style.css`.
 - Dark bg is `#1a1a1a` (not the token default — hard-coded there intentionally).

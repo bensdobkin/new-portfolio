@@ -6,7 +6,7 @@
   <title>Google Blob Opera — Other work</title>
   <meta name="description" content="Seamlessly translated a web-based experience into a physical exhibit inside the Google Store in New York City." />
   <link rel="stylesheet" href="../style.css" />
-  <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+  <script>(function(){try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 </head>
 <body>
   <nav class="site-nav">
@@ -31,7 +31,7 @@
     </aside>
 
     <article class="case-study__main">
-      <div class="case-study__hero" id="overview">
+      <div class="case-study__hero" id="overview" style="--vt-name: vt-google-blob-opera">
         <img src="../assets/images/google-blob-opera.png" alt="Google Blob Opera installation — purple blob character inside a red booth surrounded by suspended glass tube columns in the Google Store" />
       </div>
 

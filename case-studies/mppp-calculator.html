@@ -6,7 +6,7 @@
   <title>Monthly Payment Calculator for MPPP — Case study</title>
   <meta name="description" content="Ben Dobkin designed the Monthly Payment Calculator for the Medicare Prescription Payment Plan — a month-by-month estimator that became the entry point for a program now reaching ~20M Medicare enrollees." />
   <link rel="stylesheet" href="../style.css" />
-  <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+  <script>(function(){try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
   <script>(function(){try{if(sessionStorage.getItem('paytientGateAuthed')!=='1')document.documentElement.setAttribute('data-locked','1');}catch(e){document.documentElement.setAttribute('data-locked','1');}})();</script>
   <script src="../gate.js"></script>
 </head>
@@ -39,7 +39,7 @@
     </aside>
 
     <article class="case-study__main">
-      <div class="case-study__hero" id="overview" aria-hidden="true">
+      <div class="case-study__hero" id="overview" aria-hidden="true" style="--vt-name: vt-mppp-calculator">
         <img src="../assets/images/mppp-calculator-hero.png" alt="Monthly Payment Calculator with two panels side by side: a 12-month input form on the left for entering estimated monthly drug costs from January through December with an Estimate my payment button, and a results panel on the right showing a three-column calendar grid of projected monthly payments from January ($120.00, marked Opt in) through December ($349.55), a 2026 estimated out-of-pocket spend tracker showing $1,445.00 estimated spend and $655.00 remaining, and a Download as PDF action." />
       </div>
 

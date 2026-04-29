@@ -231,6 +231,7 @@ img {
   margin: 0;
 }
 
+
 .hero__subline a {
   color: var(--text-1);
   text-decoration: underline;
@@ -2027,6 +2028,10 @@ html[data-theme="dark"] .site-nav__overlay {
     flex-wrap: wrap;
   }
 
+  .site-nav__brand-name {
+    font-size: 16px;
+  }
+
   .site-nav__brand-role {
     display: none;
   }
@@ -2049,6 +2054,11 @@ html[data-theme="dark"] .site-nav__overlay {
   .hero__subline {
     font-size: 18px;
     letter-spacing: -0.36px;
+  }
+
+  .hero__subline-previous {
+    display: block;
+    margin-top: 0.9em;
   }
 
   .grid-2 {
@@ -2099,7 +2109,7 @@ html[data-theme="dark"] .site-nav__overlay {
   }
 
   .case-study__hero {
-    aspect-ratio: 3 / 1;
+    aspect-ratio: 4 / 3;
     height: auto;
   }
 
@@ -2228,18 +2238,76 @@ html[data-theme="dark"] .site-nav__overlay {
   }
 
   .site-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--sp-3);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "name toggle"
+      "email email";
+    column-gap: var(--sp-3);
+    row-gap: var(--sp-3);
+    align-items: center;
     height: auto;
     padding: var(--sp-4);
   }
 
+  .site-footer > span {
+    grid-area: name;
+  }
+
   .site-footer__right {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--sp-3);
-    width: 100%;
+    display: contents;
+  }
+
+  .site-footer__right a {
+    grid-area: email;
+  }
+
+  .theme-toggle {
+    grid-area: toggle;
+    justify-self: end;
+  }
+
+  @view-transition {
+    navigation: auto;
+  }
+
+  [style*="--vt-name"] {
+    view-transition-name: var(--vt-name);
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 350ms;
+  }
+
+  ::view-transition-new(root) {
+    animation: vt-content-in 380ms cubic-bezier(0.32, 0.72, 0, 1) 120ms backwards;
+  }
+
+  @keyframes vt-content-in {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+  }
+}
+
+@media (hover: none) {
+  .hero__subline a.brand-link {
+    overflow: visible;
+    vertical-align: baseline;
+  }
+
+  .hero__subline a.brand-link::after {
+    display: none;
+  }
+
+  .hero__subline a.brand-link:hover {
+    border-bottom-color: currentColor;
+  }
+
+  .hero__subline a.brand-link:hover > span {
+    transform: none;
   }
 }
 
@@ -2383,5 +2451,21 @@ html[data-theme="dark"] .password-gate__submit {
 html[data-theme="dark"] .password-gate__submit:hover {
   background: var(--highlight-purple);
   color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .password-gate {
+    padding: var(--sp-4);
+  }
+
+  .password-gate__title {
+    font-size: 22px;
+    letter-spacing: -0.88px;
+    white-space: normal;
+  }
+
+  .password-gate__desc {
+    white-space: normal;
+  }
 }
 

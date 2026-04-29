@@ -6,7 +6,7 @@
   <title>Toyota Maintenance Plans — Case study</title>
   <meta name="description" content="Ben Dobkin led the redesign of Toyota's Maintenance Plans page — consolidating a fragmented multi-page experience into a single personalized destination for 34M+ owners and driving an 8% lift in dealer outreach." />
   <link rel="stylesheet" href="../style.css" />
-  <script>(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+  <script>(function(){try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 </head>
 <body>
   <nav class="site-nav">
@@ -35,7 +35,7 @@
     </aside>
 
     <article class="case-study__main">
-      <div class="case-study__hero" id="overview">
+      <div class="case-study__hero" id="overview" style="--vt-name: vt-toyota-maintenance-plans">
         <img src="../assets/images/toyota-maintenance-plans-hero.png" alt="What's Included In Toyota Service Care panel with Maintenance Services and Roadside Assistance tabs, a hero photograph of a white Toyota Sequoia parked beside a campfire in a Sierra meadow at golden hour, and a 2 years and Unlimited Miles details section listing maintenance services like engine oil and filter change, rotate tires, multi-point inspection, maintenance reminders, inspect and adjust fluid levels, Toyota Genuine Parts, and Toyota-trained technicians." />
       </div>
 
