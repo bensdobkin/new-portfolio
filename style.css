@@ -421,7 +421,7 @@ main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"])::b
   --card-bg: url("assets/images/card-gradient.jpg");
   background-size: auto, 220%;
   background-position: center, 15% 25%;
-  transform: scaleX(-1);
+  transform: scaleY(-1);
 }
 
 main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"])::before {
@@ -1074,7 +1074,7 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
   --card-bg: url("assets/images/card-gradient.jpg");
   background-size: auto, cover;
   background-position: center, center 70%;
-  transform: scaleX(-1);
+  transform: scaleY(-1);
 }
 
 .case-study__hero:has(img[src*="toyota-safety-hub-hero"])::before {
