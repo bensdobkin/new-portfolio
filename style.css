@@ -392,61 +392,61 @@ main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"])::befo
   inset: 0;
   z-index: 0;
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--card-bg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), var(--card-bg);
 }
 
 main:not(.other-work) .card__image:has(img[src*="hubspot-summary"])::before {
-  --card-bg: url("assets/images/card-gradient-2.jpg");
-  background-size: auto, 220%;
+  --card-bg: url("assets/images/card-gradient-4.jpg");
+  background-size: auto, cover;
   background-position: center, 35% 60%;
   transform: scaleY(-1);
 }
 
 main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
-  background-size: auto, 180%;
+  --card-bg: url("assets/images/card-gradient-5.jpg");
+  background-size: auto, cover;
   background-position: center, 60% 30%;
   transform: rotate(180deg);
 }
 
 main:not(.other-work) .card__image:has(img[src*="hubspot-billing-enabled-contracts"])::before {
-  --card-bg: url("assets/images/card-gradient-2.jpg");
-  background-size: auto, 180%;
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, cover;
   background-position: center, 70% 25%;
   transform: scaleX(-1);
 }
 
 main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"])::before {
-  --card-bg: url("assets/images/card-gradient-2.jpg");
-  background-size: auto, 155%;
+  --card-bg: url("assets/images/card-gradient-6.jpg");
+  background-size: auto, cover;
   background-position: center, 80% 80%;
   transform: scaleX(-1);
 }
 
 main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"])::before {
   --card-bg: url("assets/images/card-gradient-2.jpg");
-  background-size: auto, 220%;
+  background-size: auto, cover;
   background-position: center, 25% 15%;
   transform: rotate(180deg);
 }
 
 main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
-  background-size: auto, 200%;
+  --card-bg: url("assets/images/card-gradient-3.jpg");
+  background-size: auto, cover;
   background-position: center, 30% 40%;
   transform: scaleX(-1);
 }
 
 main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
-  background-size: auto, 220%;
+  --card-bg: url("assets/images/card-gradient-4.jpg");
+  background-size: auto, cover;
   background-position: center, 15% 25%;
   transform: scaleY(-1);
 }
 
 main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
-  background-size: auto, 140%;
+  --card-bg: url("assets/images/card-gradient-5.jpg");
+  background-size: auto, cover;
   background-position: center, 75% 65%;
   transform: rotate(180deg);
 }
@@ -1103,11 +1103,11 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
   inset: 0;
   z-index: 0;
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--card-bg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), var(--card-bg);
 }
 
 .case-study__hero:has(img[src*="mppp-calculator-hero"])::before {
-  --card-bg: url("assets/images/card-gradient-2.jpg");
+  --card-bg: url("assets/images/card-gradient-6.jpg");
   background-size: auto, cover;
   background-position: center, center top;
   transform: scaleX(-1);
@@ -1121,20 +1121,20 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
 }
 
 .case-study__hero:has(img[src*="mppp-member-portal-hero"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
+  --card-bg: url("assets/images/card-gradient-3.jpg");
   background-size: auto, cover;
   background-position: center, center top;
 }
 
 .case-study__hero:has(img[src*="mppp-advocate-portal-hero"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
+  --card-bg: url("assets/images/card-gradient-4.jpg");
   background-size: auto, cover;
   background-position: center, center 70%;
   transform: scaleY(-1);
 }
 
 .case-study__hero:has(img[src*="toyota-safety-hub-hero"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
+  --card-bg: url("assets/images/card-gradient-5.jpg");
   background-size: auto, cover;
   background-position: center, center bottom;
   transform: rotate(180deg);
