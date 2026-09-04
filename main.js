@@ -36,9 +36,6 @@
     if (!canvas) return;
 
     var x = 0, y = 0;
-    var zoom = 1;
-    var MIN_ZOOM = 0.5;
-    var MAX_ZOOM = 3;
     var dragging = false;
     var pointerId = null;
     var startX = 0, startY = 0, baseX = 0, baseY = 0;
@@ -47,12 +44,6 @@
     var worldW = 0, worldH = 0;
     var tilingInitialized = false;
     var TILE_PADDING = 80;
-    var activePointers = {};
-    var pinching = false;
-    var pinchStartDist = 0;
-    var pinchStartZoom = 1;
-    var pinchStartX = 0, pinchStartY = 0;
-    var pinchMidX = 0, pinchMidY = 0;
 
     function wrap(v, period) {
       if (!period || period <= 0) return v;
@@ -64,18 +55,9 @@
     function applyTransform() {
       var wx = wrap(x, worldW);
       var wy = wrap(y, worldH);
-      canvas.style.transform = 'translate3d(' + wx + 'px, ' + wy + 'px, 0) scale(' + zoom + ')';
+      canvas.style.transform = 'translate3d(' + wx + 'px, ' + wy + 'px, 0)';
       viewport.style.setProperty('--bg-x', wx + 'px');
       viewport.style.setProperty('--bg-y', wy + 'px');
-    }
-
-    function pointerDist(a, b) {
-      var dx = a.x - b.x, dy = a.y - b.y;
-      return Math.sqrt(dx * dx + dy * dy);
-    }
-
-    function pointerIds() {
-      return Object.keys(activePointers);
     }
 
     function originalTiles() {
@@ -134,49 +116,8 @@
       applyTransform();
     }
 
-    function startPinch() {
-      var ids = pointerIds();
-      if (ids.length < 2) return;
-      var a = activePointers[ids[0]];
-      var b = activePointers[ids[1]];
-      dragging = false;
-      pinching = true;
-      pinchStartDist = pointerDist(a, b) || 1;
-      pinchStartZoom = zoom;
-      pinchStartX = x;
-      pinchStartY = y;
-      pinchMidX = (a.x + b.x) / 2;
-      pinchMidY = (a.y + b.y) / 2;
-    }
-
-    function updatePinch() {
-      var ids = pointerIds();
-      if (ids.length < 2) return;
-      var a = activePointers[ids[0]];
-      var b = activePointers[ids[1]];
-      var dist = pointerDist(a, b) || 1;
-      var nextZoom = pinchStartZoom * (dist / pinchStartDist);
-      nextZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, nextZoom));
-      var midX = (a.x + b.x) / 2;
-      var midY = (a.y + b.y) / 2;
-      var worldX = (pinchMidX - pinchStartX) / pinchStartZoom;
-      var worldY = (pinchMidY - pinchStartY) / pinchStartZoom;
-      zoom = nextZoom;
-      x = midX - worldX * zoom;
-      y = midY - worldY * zoom;
-      applyTransform();
-    }
-
     viewport.addEventListener('pointerdown', function (e) {
       if (e.button !== undefined && e.button !== 0) return;
-      activePointers[e.pointerId] = { x: e.clientX, y: e.clientY };
-      try { viewport.setPointerCapture(e.pointerId); } catch (err) {}
-
-      if (pointerIds().length >= 2) {
-        startPinch();
-        return;
-      }
-
       dragging = true;
       pointerId = e.pointerId;
       movedDist = 0;
@@ -185,18 +126,10 @@
       baseX = x;
       baseY = y;
       viewport.classList.add('is-dragging');
+      try { viewport.setPointerCapture(e.pointerId); } catch (err) {}
     });
 
     viewport.addEventListener('pointermove', function (e) {
-      if (!activePointers[e.pointerId]) return;
-      activePointers[e.pointerId].x = e.clientX;
-      activePointers[e.pointerId].y = e.clientY;
-
-      if (pinching) {
-        updatePinch();
-        return;
-      }
-
       if (!dragging || e.pointerId !== pointerId) return;
       var dx = e.clientX - startX;
       var dy = e.clientY - startY;
@@ -208,26 +141,6 @@
     });
 
     function endDrag(e) {
-      if (e) delete activePointers[e.pointerId];
-
-      if (pinching) {
-        var ids = pointerIds();
-        if (ids.length < 2) {
-          pinching = false;
-          if (ids.length === 1) {
-            dragging = true;
-            pointerId = ids[0];
-            var p = activePointers[pointerId];
-            startX = p.x;
-            startY = p.y;
-            baseX = x;
-            baseY = y;
-            movedDist = DRAG_THRESHOLD + 1;
-          }
-        }
-        return;
-      }
-
       if (!dragging) return;
       if (e && e.pointerId !== pointerId) return;
       dragging = false;
