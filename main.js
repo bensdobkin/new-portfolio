@@ -173,13 +173,10 @@
     function setup() {
       setupInfiniteTiling();
       center();
+      canvas.classList.add('is-ready');
     }
 
-    if (document.readyState === 'complete') {
-      setup();
-    } else {
-      window.addEventListener('load', setup);
-    }
+    setup();
     window.addEventListener('resize', center);
   }
 
@@ -486,6 +483,7 @@
     });
 
     star.addEventListener('mouseenter', triggerSpin);
+    star.addEventListener('click', triggerSpin);
 
     scheduleAuto();
   }

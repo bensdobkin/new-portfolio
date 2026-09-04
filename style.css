@@ -162,6 +162,8 @@ img {
 
 .site-footer a {
   color: var(--text-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
   transition: color 120ms ease;
 }
 
@@ -365,6 +367,8 @@ main:not(.other-work) .card__image {
 }
 
 main:not(.other-work) .card__image:has(img[src*="hubspot-summary"]),
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"]),
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-enabled-contracts"]),
 main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"]),
 main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"]),
 main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"]),
@@ -376,6 +380,8 @@ main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"]) {
 }
 
 main:not(.other-work) .card__image:has(img[src*="hubspot-summary"])::before,
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"])::before,
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-enabled-contracts"])::before,
 main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"])::before,
 main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"])::before,
 main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"])::before,
@@ -394,6 +400,20 @@ main:not(.other-work) .card__image:has(img[src*="hubspot-summary"])::before {
   background-size: auto, 220%;
   background-position: center, 35% 60%;
   transform: scaleY(-1);
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"])::before {
+  --card-bg: url("assets/images/card-gradient.jpg");
+  background-size: auto, 180%;
+  background-position: center, 60% 30%;
+  transform: rotate(180deg);
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-enabled-contracts"])::before {
+  --card-bg: url("assets/images/card-gradient-2.jpg");
+  background-size: auto, 180%;
+  background-position: center, 70% 25%;
+  transform: scaleX(-1);
 }
 
 main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"])::before {
@@ -432,6 +452,8 @@ main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"])::befo
 }
 
 main:not(.other-work) .card__image:has(img[src*="hubspot-summary"]) img,
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"]) img,
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-enabled-contracts"]) img,
 main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"]) img,
 main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"]) img,
 main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"]) img,
@@ -507,6 +529,16 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
   filter: brightness(0) invert(1);
 }
 
+.card__image--logo:has(img[src*="hubspot-revenue-hub-logo"]) {
+  background: var(--accent);
+}
+
+.card__image--logo img[src*="hubspot-revenue-hub-logo"] {
+  max-width: 40%;
+  max-height: 40%;
+  filter: brightness(0) invert(1);
+}
+
 .card__image--contain img {
   width: auto;
   height: auto;
@@ -515,7 +547,9 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
   object-fit: contain;
 }
 
-.card__image--contain img[src*="hubspot-summary"] {
+.card__image--contain img[src*="hubspot-summary"],
+.card__image--contain img[src*="hubspot-billing-schedules"],
+.card__image--contain img[src*="hubspot-billing-enabled-contracts"] {
   max-width: 80%;
   max-height: 80%;
   filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.12));
@@ -556,8 +590,18 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
   transition: color 200ms ease, transform 200ms ease;
 }
 
+.card__external {
+  flex-shrink: 0;
+  color: var(--text-2);
+  transition: color 200ms ease;
+}
+
 @media (hover: hover) and (pointer: fine) {
   a.card:hover .card__arrow {
+    color: var(--text-1);
+  }
+
+  a.card:hover .card__external {
     color: var(--text-1);
   }
 }
@@ -614,12 +658,17 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
   cursor: grabbing;
 }
 
+.playground__canvas.is-ready {
+  visibility: visible;
+}
+
 .playground__canvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 0;
   height: 0;
+  visibility: hidden;
   will-change: transform;
 }
 
@@ -918,6 +967,13 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
   font-weight: 300;
   letter-spacing: -0.42px;
   line-height: 22px;
+}
+
+.about__exp-role-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--sp-3);
 }
 
 .about__exp-dates {
