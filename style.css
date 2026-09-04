@@ -406,6 +406,8 @@ main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"])::b
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 60% 40%;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"]) img {
@@ -451,6 +453,8 @@ main:not(.other-work) .card__image:has(img[src*="hubspot-integrations"])::before
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 75% center;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 main:not(.other-work) .card__image:has(img[src*="hubspot-integrations"]) img {
@@ -473,6 +477,8 @@ main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"])::b
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 45% 50%;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"]) img {
@@ -495,6 +501,8 @@ main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"])::before
   background-repeat: no-repeat;
   background-size: 145%;
   background-position: 0% 100%;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"]) img {
@@ -517,6 +525,8 @@ main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"]
   background-repeat: no-repeat;
   background-size: 145%;
   background-position: 0% center;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"]) img {
