@@ -244,6 +244,7 @@
     }
 
     gallery.addEventListener('click', function (e) {
+      if (window.matchMedia('(pointer: coarse)').matches) return;
       var target = e.target.closest('.playground__item');
       if (!target) return;
       var index = parseInt(target.getAttribute('data-index'), 10) || 0;

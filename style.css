@@ -369,95 +369,180 @@ main:not(.other-work) .card__image {
 main:not(.other-work) .card__image:has(img[src*="hubspot-summary"]),
 main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"]),
 main:not(.other-work) .card__image:has(img[src*="hubspot-billing-enabled-contracts"]),
+main:not(.other-work) .card__image:has(img[src*="hubspot-integrations"]),
 main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"]),
 main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"]),
-main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"]),
 main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"]),
+main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"]) {
+  position: relative;
+  background: repeating-linear-gradient(45deg, #e0e0e0 0, #e0e0e0 1px, transparent 1px, transparent 5.5px), var(--white);
+  border-color: #e0e0e0;
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-summary"]) img,
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"]) img,
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-enabled-contracts"]) img,
+main:not(.other-work) .card__image:has(img[src*="hubspot-integrations"]) img,
+main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"]) img,
+main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"]) img,
+main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"]) img,
+main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"]) img {
+  position: relative;
+  z-index: 1;
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"]) {
+  position: relative;
+  background: transparent;
+  border-color: var(--border);
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"])::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("assets/images/card-gradient-7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 60% 40%;
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"]) img {
+  position: relative;
+  z-index: 1;
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-summary"]) {
+  position: relative;
+  background: transparent;
+  border-color: var(--border);
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-summary"])::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("assets/images/card-gradient-4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 35% 60%;
+  transform: scaleY(-1);
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-summary"]) img {
+  position: relative;
+  z-index: 1;
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-integrations"]) {
+  position: relative;
+  background: transparent;
+  border-color: var(--border);
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-integrations"])::before {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  z-index: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("assets/images/card-gradient.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 30% center;
+  transform: rotate(90deg);
+}
+
+main:not(.other-work) .card__image:has(img[src*="hubspot-integrations"]) img {
+  position: relative;
+  z-index: 1;
+}
+
+main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"]) {
+  position: relative;
+  background: transparent;
+  border-color: var(--border);
+}
+
+main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"])::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("assets/images/card-gradient-8.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 45% 50%;
+}
+
+main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"]) img {
+  position: relative;
+  z-index: 1;
+}
+
+main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"]) {
+  position: relative;
+  background: transparent;
+  border-color: var(--border);
+}
+
+main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"])::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("assets/images/card-gradient-2.jpg");
+  background-repeat: no-repeat;
+  background-size: 145%;
+  background-position: 0% 100%;
+}
+
+main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"]) img {
+  position: relative;
+  z-index: 1;
+}
+
+main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"]) {
+  position: relative;
+  background: transparent;
+  border-color: var(--border);
+}
+
+main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"])::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("assets/images/card-gradient-9.jpg");
+  background-repeat: no-repeat;
+  background-size: 145%;
+  background-position: 0% center;
+}
+
+main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"]) img {
+  position: relative;
+  z-index: 1;
+}
+
 main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"]) {
   position: relative;
   background: transparent;
   border-color: var(--border);
 }
 
-main:not(.other-work) .card__image:has(img[src*="hubspot-summary"])::before,
-main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"])::before,
-main:not(.other-work) .card__image:has(img[src*="hubspot-billing-enabled-contracts"])::before,
-main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"])::before,
-main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"])::before,
-main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"])::before,
-main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"])::before,
 main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"])::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -25%;
   z-index: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("assets/images/card-gradient-4.jpg");
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), var(--card-bg);
+  background-size: cover;
+  background-position: center 100%;
+  transform: rotate(90deg);
 }
 
-main:not(.other-work) .card__image:has(img[src*="hubspot-summary"])::before {
-  --card-bg: url("assets/images/card-gradient-4.jpg");
-  background-size: auto, cover;
-  background-position: center, 35% 60%;
-  transform: scaleY(-1);
-}
-
-main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"])::before {
-  --card-bg: url("assets/images/card-gradient-5.jpg");
-  background-size: auto, cover;
-  background-position: center, 60% 30%;
-  transform: rotate(180deg);
-}
-
-main:not(.other-work) .card__image:has(img[src*="hubspot-billing-enabled-contracts"])::before {
-  --card-bg: url("assets/images/card-gradient.jpg");
-  background-size: auto, cover;
-  background-position: center, 70% 25%;
-  transform: scaleX(-1);
-}
-
-main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"])::before {
-  --card-bg: url("assets/images/card-gradient-6.jpg");
-  background-size: auto, cover;
-  background-position: center, 80% 80%;
-  transform: scaleX(-1);
-}
-
-main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"])::before {
-  --card-bg: url("assets/images/card-gradient-2.jpg");
-  background-size: auto, cover;
-  background-position: center, 25% 15%;
-  transform: rotate(180deg);
-}
-
-main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"])::before {
-  --card-bg: url("assets/images/card-gradient-3.jpg");
-  background-size: auto, cover;
-  background-position: center, 30% 40%;
-  transform: scaleX(-1);
-}
-
-main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"])::before {
-  --card-bg: url("assets/images/card-gradient-4.jpg");
-  background-size: auto, cover;
-  background-position: center, 15% 25%;
-  transform: scaleY(-1);
-}
-
-main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"])::before {
-  --card-bg: url("assets/images/card-gradient-5.jpg");
-  background-size: auto, cover;
-  background-position: center, 75% 65%;
-  transform: rotate(180deg);
-}
-
-main:not(.other-work) .card__image:has(img[src*="hubspot-summary"]) img,
-main:not(.other-work) .card__image:has(img[src*="hubspot-billing-schedules"]) img,
-main:not(.other-work) .card__image:has(img[src*="hubspot-billing-enabled-contracts"]) img,
-main:not(.other-work) .card__image:has(img[src*="mppp-calculator-card"]) img,
-main:not(.other-work) .card__image:has(img[src*="toyota-maintenance-plans-card"]) img,
-main:not(.other-work) .card__image:has(img[src*="mppp-member-portal-card"]) img,
-main:not(.other-work) .card__image:has(img[src*="mppp-advocate-portal-card"]) img,
 main:not(.other-work) .card__image:has(img[src*="toyota-safety-hub-card"]) img {
   position: relative;
   z-index: 1;
@@ -549,7 +634,8 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
 
 .card__image--contain img[src*="hubspot-summary"],
 .card__image--contain img[src*="hubspot-billing-schedules"],
-.card__image--contain img[src*="hubspot-billing-enabled-contracts"] {
+.card__image--contain img[src*="hubspot-billing-enabled-contracts"],
+.card__image--contain img[src*="hubspot-integrations"] {
   max-width: 80%;
   max-height: 80%;
   filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.12));
@@ -647,7 +733,7 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
   overflow: hidden;
   cursor: grab;
   user-select: none;
-  touch-action: none;
+  touch-action: pinch-zoom;
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1.5px);
   background-size: 22px 22px;
   background-position: var(--bg-x, 0) var(--bg-y, 0);
@@ -1091,58 +1177,54 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
 .case-study__hero:has(img[src*="toyota-maintenance-plans-"]),
 .case-study__hero:has(img[src*="toyota-safety-hub-"]) {
   position: relative;
-  background: transparent;
-  border-bottom-color: transparent;
+  border-bottom-color: var(--border);
 }
 
-.case-study__hero:has(img[src*="mppp-"])::before,
-.case-study__hero:has(img[src*="toyota-maintenance-plans-"])::before,
-.case-study__hero:has(img[src*="toyota-safety-hub-"])::before {
+.case-study__hero:has(img[src*="mppp-calculator-hero"])::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("assets/images/card-gradient-2.jpg");
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), var(--card-bg);
-}
-
-.case-study__hero:has(img[src*="mppp-calculator-hero"])::before {
-  --card-bg: url("assets/images/card-gradient-6.jpg");
-  background-size: auto, cover;
-  background-position: center, center top;
-  transform: scaleX(-1);
+  background-size: cover;
+  background-position: center 20%;
 }
 
 .case-study__hero:has(img[src*="toyota-maintenance-plans-hero"])::before {
-  --card-bg: url("assets/images/card-gradient-2.jpg");
-  background-size: auto, cover;
-  background-position: center, center 30%;
-  transform: rotate(180deg);
-}
-
-.case-study__hero:has(img[src*="mppp-member-portal-hero"])::before {
-  --card-bg: url("assets/images/card-gradient-3.jpg");
-  background-size: auto, cover;
-  background-position: center, center top;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("assets/images/card-gradient-9.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .case-study__hero:has(img[src*="mppp-advocate-portal-hero"])::before {
-  --card-bg: url("assets/images/card-gradient-4.jpg");
-  background-size: auto, cover;
-  background-position: center, center 70%;
-  transform: scaleY(-1);
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("assets/images/card-gradient-8.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 45% 50%;
 }
 
 .case-study__hero:has(img[src*="toyota-safety-hub-hero"])::before {
-  --card-bg: url("assets/images/card-gradient-5.jpg");
-  background-size: auto, cover;
-  background-position: center, center bottom;
-  transform: rotate(180deg);
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("assets/images/card-gradient-4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.case-study__hero:has(img[src*="mppp-"]) img,
-.case-study__hero:has(img[src*="toyota-maintenance-plans-"]) img,
-.case-study__hero:has(img[src*="toyota-safety-hub-"]) img {
+.case-study__hero img {
   position: relative;
   z-index: 1;
 }
@@ -1949,7 +2031,7 @@ html[data-theme="dark"] .case-study__compare-cell {
   background: #1a1a1a;
 }
 
-html[data-theme="dark"] main:not(.other-work) .card__image {
+html[data-theme="dark"] main:not(.other-work) .card__image:not(.card__image--logo) {
   background: var(--bg-card);
   border-color: #2a2a2a;
 }
@@ -2267,21 +2349,35 @@ html[data-theme="dark"] .site-nav__overlay {
     grid-template-columns: 1fr;
   }
 
-  .case-study__compare--rows-2 > .case-study__compare-header,
-  .case-study__compare--rows-2 > .case-study__compare-cell,
-  .case-study__compare--rows-2--cols-3 > .case-study__compare-header,
-  .case-study__compare--rows-2--cols-3 > .case-study__compare-cell {
-    border-left: 1px dashed var(--border);
+  /* Reflow into grouped columns (all of col 1, then all of col 2, ...) instead
+     of the raw row-by-row DOM order, so headers don't all stack up front. */
+  .case-study__compare--rows-2 > :nth-child(even) {
+    order: 1;
   }
 
-  .case-study__compare--rows-2 > .case-study__compare-header:nth-child(-n+2),
-  .case-study__compare--rows-2--cols-3 > .case-study__compare-header:nth-child(-n+3) {
-    border-top: none;
+  .case-study__compare--rows-2--cols-3 > :nth-child(3n+1) {
+    order: 0;
   }
 
-  .case-study__compare--rows-2 > .case-study__compare-header:first-child,
-  .case-study__compare--rows-2--cols-3 > .case-study__compare-header:first-child {
-    border-top: 1px dashed var(--border);
+  .case-study__compare--rows-2--cols-3 > :nth-child(3n+2) {
+    order: 1;
+  }
+
+  .case-study__compare--rows-2--cols-3 > :nth-child(3n) {
+    order: 2;
+  }
+
+  .case-study__compare--rows-2 > .case-study__compare-header:nth-child(n),
+  .case-study__compare--rows-2 > .case-study__compare-cell:nth-child(n),
+  .case-study__compare--rows-2--cols-3 > .case-study__compare-header:nth-child(n),
+  .case-study__compare--rows-2--cols-3 > .case-study__compare-cell:nth-child(n) {
+    border: 1px dashed var(--border);
+    margin-top: -1px;
+  }
+
+  .case-study__compare--rows-2 > *:first-child,
+  .case-study__compare--rows-2--cols-3 > *:first-child {
+    margin-top: 0;
   }
 
   .case-study__stat-num {
@@ -2304,13 +2400,25 @@ html[data-theme="dark"] .site-nav__overlay {
     border-bottom: none;
   }
 
-  .case-study__numbered-cell,
-  .case-study__numbered-cell:first-child {
+  .case-study__numbered-cell {
     border-left: 1px dashed var(--border);
     border-top: none;
   }
 
   .case-study__numbered-cell:first-child {
+    border-top: 1px dashed var(--border);
+  }
+
+  .case-study__numbered--grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study__numbered--grid-2 .case-study__numbered-cell:nth-child(n) {
+    border-left: 1px dashed var(--border);
+    border-top: none;
+  }
+
+  .case-study__numbered--grid-2 .case-study__numbered-cell:first-child {
     border-top: 1px dashed var(--border);
   }
 
