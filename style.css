@@ -445,13 +445,12 @@ main:not(.other-work) .card__image:has(img[src*="hubspot-integrations"]) {
 main:not(.other-work) .card__image:has(img[src*="hubspot-integrations"])::before {
   content: "";
   position: absolute;
-  inset: -25%;
+  inset: 0;
   z-index: 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("assets/images/card-gradient.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 30% center;
-  transform: rotate(90deg);
+  background-position: 75% center;
 }
 
 main:not(.other-work) .card__image:has(img[src*="hubspot-integrations"]) img {
@@ -733,7 +732,7 @@ a.card:hover .card__image img[src*="apple-pay-logo"] {
   overflow: hidden;
   cursor: grab;
   user-select: none;
-  touch-action: pinch-zoom;
+  touch-action: none;
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1.5px);
   background-size: 22px 22px;
   background-position: var(--bg-x, 0) var(--bg-y, 0);
